@@ -1,0 +1,14 @@
+name: Demo Plan
+level: beginner
+author: Jit
+version: 0.1
+owners:
+  default:
+references:
+  - https://www.jit.io
+tags:
+  - demo
+#----------- List of plan items -----------
+items:
+  - name: Scan code for hard-coded secrets
+    uses: jitsecurity-controls/jit-plans/items/None/item-secret-detection.yml@latest
