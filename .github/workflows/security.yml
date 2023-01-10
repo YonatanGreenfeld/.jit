@@ -10,7 +10,7 @@ jobs:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'secret-detection'
     runs-on: ubuntu-20.04
     steps:
-    - name: gitleaks
+    - name: secrets-detection
       uses: jitsecurity-controls/jit-github-action@v1.7
       with:
         docker_user: jit-bot
