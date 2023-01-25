@@ -1,6 +1,6 @@
 applications:
 - api_domain: '123'
-  application_name: '123'
+  application_name: '123123'
   authentication_mode: non-authenticated
   exclude_paths: []
   target_url: https://8ed841b1192c.ngrok.io/swagger.json
