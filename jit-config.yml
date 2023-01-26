@@ -1,5 +1,5 @@
 applications:
-- api_domain: '123'
+- api_domain: bla.com
   application_name: '123123'
   authentication_mode: non-authenticated
   exclude_paths: []
