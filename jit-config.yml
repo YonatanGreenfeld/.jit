@@ -1,1 +1,7 @@
-
+applications:
+- api_domain: ap.dom
+  application_name: '123'
+  authentication_mode: non-authenticated
+  exclude_paths: []
+  target_url: https://app.shortcut.com/jit/stories/space/unsaved.json
+  type: api
