@@ -4,7 +4,7 @@ applications:
   authentication_mode: selenium
   exclude_paths: []
   login_page_url: https://platform.dev.jitdev.io/login
-  password: encrypted$AQICAHhpFcIXIhU6d93x5dEW8mdH+GAoJET0G2RkVqkI5vH/4QHtPbrskEY89dtPHGKrecK2AAAAdjB0BgkqhkiG9w0BBwagZzBlAgEAMGAGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMZ9JMbAVYer7Wl0tbAgEQgDNMY6TB2T8Qhb5YiBQwP1bjLhghTHQEENty9i/EAH5n3IF6bmgptHwZRdR4QLHms4anz3Q=
+  password: encrypted$AQICAHhD0n+Eqj0ZEMtRnCrRxu94Uld5QbHB2HR/ubkb7SdCcgGtbRqHWndT0uLEga/6tiNFAAAAdjB0BgkqhkiG9w0BBwagZzBlAgEAMGAGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQM+F2eQcyLs5VCRdh6AgEQgDPUt8iPaBh9Tad7qqL+IgjAneOGf8+27c4E/WculcQgW8nMTpf3UjXD7ismosm3g4mjf/A=
   password_css_selector: input[data-test-id='input-password']
   target_url: https://8ed841b1192c.ngrok.io/swagger.json
   type: api
