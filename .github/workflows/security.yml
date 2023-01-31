@@ -11,10 +11,11 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
     - name: enrichment
-      uses: jitsecurity-controls/jit-github-action@v1.7
+      uses: jitsecurity-controls/jit-github-action@v1.8
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
+        
         security_control: ghcr.io/jitsecurity-controls/control-enrichment-slim:main
         security_control_args: --path \${WORK_DIR:-.}
         
@@ -25,10 +26,11 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
     - name: gitleaks
-      uses: jitsecurity-controls/jit-github-action@v1.7
+      uses: jitsecurity-controls/jit-github-action@v1.8
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
+        
         security_control: ghcr.io/jitsecurity-controls/control-gitleaks-alpine:main
         security_control_args: detect --config \$GITLEAKS_CONFIG_FILE_PATH --source \${WORK_DIR:-.} -v --report-format json --report-path \$REPORT_FILE --redact --no-git --exit-code 0
         security_control_output_file: /tmp/report.json
@@ -39,10 +41,11 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
     - name: nancy
-      uses: jitsecurity-controls/jit-github-action@v1.7
+      uses: jitsecurity-controls/jit-github-action@v1.8
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
+        
         security_control: ghcr.io/jitsecurity-controls/control-nancy-alpine:main
         security_control_args: 
         
@@ -53,10 +56,11 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
     - name: npm-audit
-      uses: jitsecurity-controls/jit-github-action@v1.7
+      uses: jitsecurity-controls/jit-github-action@v1.8
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
+        
         security_control: ghcr.io/jitsecurity-controls/control-npm-audit-slim:main
         security_control_args: audit --json --production
         
@@ -67,10 +71,11 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
     - name: dependency-check
-      uses: jitsecurity-controls/jit-github-action@v1.7
+      uses: jitsecurity-controls/jit-github-action@v1.8
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
+        
         security_control: ghcr.io/jitsecurity-controls/control-dependency-check-alpine:main
         security_control_args: --scan \${WORK_DIR:-.} --enableExperimental --disableJar --disableRubygems --disableBundleAudit --disableCocoapodsAnalyzer --disableSwiftPackageManagerAnalyzer --disableSwiftPackageResolvedAnalyzer --disableAutoconf --disableCmake --disableComposer --disableCpan --disableNuspec --disableNugetconf --disableAssembly --disableGolangDep --disableGolangMod --disableNodeJS --disableYarnAudit --disableNodeAudit --format JSON --noupdate --out \$REPORT_FILE --log /code/error.txt
         security_control_output_file: /tmp/report.json
@@ -81,10 +86,11 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
     - name: gosec
-      uses: jitsecurity-controls/jit-github-action@v1.7
+      uses: jitsecurity-controls/jit-github-action@v1.8
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
+        
         security_control: ghcr.io/jitsecurity-controls/control-gosec-alpine:main
         security_control_args: -fmt=json -severity=high \${WORK_DIR:-.}/...
         
@@ -95,10 +101,11 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
     - name: semgrep
-      uses: jitsecurity-controls/jit-github-action@v1.7
+      uses: jitsecurity-controls/jit-github-action@v1.8
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
+        
         security_control: ghcr.io/jitsecurity-controls/control-semgrep-alpine:main
         security_control_args: --json --config=/semgrep-config.yml --metrics=off --severity=ERROR \${WORK_DIR:-.}
         
@@ -109,10 +116,11 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
     - name: bandit
-      uses: jitsecurity-controls/jit-github-action@v1.7
+      uses: jitsecurity-controls/jit-github-action@v1.8
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
+        
         security_control: ghcr.io/jitsecurity-controls/control-bandit-slim:main
         security_control_args: -r \${WORK_DIR:-.} -f json -q -lll -iii
         
