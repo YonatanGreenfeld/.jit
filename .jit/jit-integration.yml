@@ -1,5 +1,5 @@
-bla:
-- 1
-- 2
-- 3
-- 4
+shortcut:
+ my-integration:
+  bla: 1
+  foo: bar
+  ya: gever
