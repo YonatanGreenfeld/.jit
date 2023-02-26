@@ -1,4 +1,4 @@
-bla:
-- 1
-- 2
-- 3
+shortcut:
+ my-integration:
+  auth:
+   api-key: "blabla1"
