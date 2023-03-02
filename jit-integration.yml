@@ -2,4 +2,8 @@ shortcut:
  hola:
   auth:
    api_token: "${{ secrets.shortcut-api }}"
-
+jira:
+ my-jira:
+  auth:
+   api_token: "${{ secrets.jira-api }}"
+   email: "my-mail@jira.com"
