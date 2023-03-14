@@ -1,7 +1,7 @@
 shortcut:
  shortcut1:
   auth:
-   api_token: "${{ secrets.shortcut-api2 }}"
+   api_token: "${{ secrets.shortcut-api3 }}"
   preferences:
    project_id: 2
 jira:
