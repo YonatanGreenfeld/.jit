@@ -1,3 +1,9 @@
+shortcut:
+ my-shortcut:
+  auth:
+   api_token: "${{ secrets.shortcut-api }}"
+  preferences:
+   project_id: 2
 jira:
   my-jira:
     auth:
