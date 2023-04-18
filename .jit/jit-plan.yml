@@ -14,4 +14,7 @@ items:
   - name: Scan your Dockerfiles for vulnerabilities
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-container-scan.yml@latest
+  - name: Scan your web application for vulnerabilities
+    uses: >-
+      jitsecurity-controls/jit-plans/items/runtime/item-web-app-scanner.yml@latest
 
