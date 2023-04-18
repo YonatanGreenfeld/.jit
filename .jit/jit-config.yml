@@ -1,1 +1,6 @@
-
+applications:
+- application_name: Zap
+  authentication_mode: non-authenticated
+  exclude_paths: []
+  target_url: https://google.com
+  type: web
