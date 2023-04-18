@@ -4,3 +4,4 @@ applications:
   exclude_paths: []
   target_url: https://google.com
   type: web
+
