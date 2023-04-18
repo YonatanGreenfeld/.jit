@@ -1,0 +1,6 @@
+applications:
+- application_name: google
+  authentication_mode: non-authenticated
+  exclude_paths: []
+  target_url: https://gooogle.com
+  type: web
