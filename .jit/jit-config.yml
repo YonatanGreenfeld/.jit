@@ -4,7 +4,7 @@ applications:
   authentication_mode: selenium
   exclude_paths: []
   login_page_url: https://platform.dev.jitdev.io/login
-  password: encrypted$AQICAHhpFcIXIhU6d93x5dEW8mdH+GAoJET0G2RkVqkI5vH/4QGP0SuucyCmr/evxUoShOEOAAAAdjB0BgkqhkiG9w0BBwagZzBlAgEAMGAGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQME2ltNCIHzvn09UtUAgEQgDOGjuW1xBSK1mbfSG+yufIj0SLGt5svclJ3CRa+QMabLl5ds0pCmKtTTeFdC2z1DHNC9z4=
+  password: encrypted$AQICAHhpFcIXIhU6d93x5dEW8mdH+GAoJET0G2RkVqkI5vH/4QGk/E5pEZEkUDRg/W8GkmVDAAAAdjB0BgkqhkiG9w0BBwagZzBlAgEAMGAGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMtSQ8koeo6xjFMtv6AgEQgDPMvWVqKkvEoGVE3Il3ZcT169HNBG9UcIDzD2LB4QPYhz/IQT2ZxdAGiJ5N25gb8t6yvfE=
   password_css_selector: input[data-test-id=\"input-password\"]
   target_url: https://platform.dev.jitdev.io
   type: web
