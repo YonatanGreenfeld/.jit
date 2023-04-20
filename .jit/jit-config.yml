@@ -4,9 +4,9 @@ applications:
   authentication_mode: selenium
   exclude_paths: []
   login_page_url: https://platform.dev.jitdev.io/login
-  password: encrypted$AQICAHhpFcIXIhU6d93x5dEW8mdH+GAoJET0G2RkVqkI5vH/4QGk/E5pEZEkUDRg/W8GkmVDAAAAdjB0BgkqhkiG9w0BBwagZzBlAgEAMGAGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMtSQ8koeo6xjFMtv6AgEQgDPMvWVqKkvEoGVE3Il3ZcT169HNBG9UcIDzD2LB4QPYhz/IQT2ZxdAGiJ5N25gb8t6yvfE=
-  password_css_selector: input[data-test-id=\"input-password\"]
+  password: encrypted$AQICAHhpFcIXIhU6d93x5dEW8mdH+GAoJET0G2RkVqkI5vH/4QFrem6AGM0KZ/Fdnrt06NXiAAAAdjB0BgkqhkiG9w0BBwagZzBlAgEAMGAGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMLCgpgg3qb26qWhf7AgEQgDNbUYTf6Z0l/ox/KMbrfDfURpAiX7qLBb5aNJt11m/2dLF+5afYeD8MJ+Qb2612dbJ9Xrc=
+  password_css_selector: input[data-test-id="input-password"]
   target_url: https://platform.dev.jitdev.io
   type: web
   username: jit.cypress.e2e.dev@gmail.com
-  username_css_selector: input[data-test-id=\"input-email\"]
+  username_css_selector: input[data-test-id="input-email"]
