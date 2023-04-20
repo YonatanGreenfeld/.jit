@@ -1,6 +1,12 @@
 applications:
-- application_name: google
-  authentication_mode: non-authenticated
+- api_domain: api.dev.jitdev.io
+  application_name: jit-dev
+  authentication_mode: selenium
   exclude_paths: []
-  target_url: https://google.com
+  login_page_url: https://platform.dev.jitdev.io/login
+  password: encrypted$AQICAHhpFcIXIhU6d93x5dEW8mdH+GAoJET0G2RkVqkI5vH/4QGMeVj9MUH6aiF4ZRGtPu6/AAAAdjB0BgkqhkiG9w0BBwagZzBlAgEAMGAGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMj6Qth3VyWUnq0hlVAgEQgDMKDzF2M6m0LxQ0NlO8oYDM04eNz1gaNNDzqP+Enke3Y4manl2Nia+zSJ3DuwHyvdy33Y4=
+  password_css_selector: input[data-test-id='input-password']
+  target_url: https://platform.dev.jitdev.io
   type: web
+  username: jit.cypress.e2e.dev@gmail.com
+  username_css_selector: input[data-test-id='input-email']
