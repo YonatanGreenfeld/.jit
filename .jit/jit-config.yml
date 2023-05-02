@@ -1,6 +1,6 @@
 applications:
-- application_name: jit-dev1
+- application_name: google
   authentication_mode: non-authenticated
   exclude_paths: []
-  target_url: https://google.co.il
+  target_url: https://google.com
   type: web
