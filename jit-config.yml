@@ -5,3 +5,16 @@ applications:
   exclude_paths: []
   target_url: https://app.shortcut.com/jit/stories/space/unsaved.json
   type: api
+- api_domain: api.staging.jit.io
+  application_name: GuyStaging
+  authentication_mode: selenium
+  exclude_paths:
+  - https://platform.staging.jit.io/logout
+  login_page_url: https://platform.staging.jit.io/login
+  password: encrypted$AQICAHhD0n+Eqj0ZEMtRnCrRxu94Uld5QbHB2HR/ubkb7SdCcgGFi4HXd92pAmrsFCt2xOZ4AAAAqTCBpgYJKoZIhvcNAQcGoIGYMIGVAgEAMIGPBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDJt5+PucCswf7MBYJgIBEIBi0Z9AgRImE1D11dqYk3T+CX4YXj5+16IUgdWJKyynxW2BcLACVAQwKjRTL0k9ysXNcM9s4iAGiWZH4i6rEBOIQ9JqaC+dif92hbf7zyFDFfADNIhhQ56XMXeN97fAlAuk4Ag=
+  password_css_selector: input[type=password]
+  password_ref: ${{ jit_secrets.web_scan_password }}
+  target_url: https://platform.staging.jit.io
+  type: web
+  username: guy+zap.staging@jit.io
+  username_css_selector: input[type=text]
