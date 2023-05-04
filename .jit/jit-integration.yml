@@ -1,7 +1,7 @@
 jira:
   my-jira:
     auth:
-      api_token: ${{ jit_secrets.jira-api }}
+      api_token: ${{ jit_secrets.jira-api  }}
       domain: eliya-test-99
       email: eliya@jit.io
     preferences:
