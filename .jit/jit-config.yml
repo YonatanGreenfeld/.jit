@@ -2,5 +2,5 @@ applications:
 - application_name: google
   authentication_mode: non-authenticated
   exclude_paths: []
-  target_url: https://google.com
+  target_url: https://google.co.il
   type: web
