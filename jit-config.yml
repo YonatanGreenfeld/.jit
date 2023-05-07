@@ -26,8 +26,3 @@ applications:
   type: web
   username: guy+zap.staging@jit.io
   username_css_selector: input[type=text]
-aws:
-- account_id: '859000334327'
-  regions:
-  - us-east-1
-  type: account
