@@ -4,3 +4,9 @@ applications:
   exclude_paths: []
   target_url: https://google.com
   type: web
+- api_domain: api.rocket.io
+  application_name: MyAPI
+  authentication_mode: non-authenticated
+  exclude_paths: []
+  target_url: https://meshi-bucket.s3.amazonaws.com/openapi.json
+  type: api
