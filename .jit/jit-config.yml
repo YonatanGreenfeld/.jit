@@ -4,8 +4,3 @@ applications:
   exclude_paths: []
   target_url: https://google.com
   type: web
-aws:
-- account_id: '859000334327'
-  regions:
-  - us-east-1
-  type: account
