@@ -14,7 +14,7 @@ applications:
   username: guy+zap.staging@jit.io
   username_css_selector: input[type=text]
 - api_domain: api.staging.jit.io
-  application_name: GuyStaging
+  application_name: GuyStagingLOL
   authentication_mode: selenium
   exclude_paths:
   - https://platform.staging.jit.io/logout
