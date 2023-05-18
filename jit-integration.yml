@@ -1,5 +1,5 @@
 jira:
-  shimi:
+  jira-1:
     auth:
       api_token: ${{ jit_secrets.jira-api }}
       domain: eliya-test-99
