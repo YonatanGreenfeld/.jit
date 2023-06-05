@@ -9,6 +9,7 @@ jobs:
   docker-scan:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'docker-scan'
     runs-on: ubuntu-20.04
+    timeout-minutes: 20
     steps:
     - name: trivy
       uses: jitsecurity-controls/jit-github-action@v2.2
@@ -16,7 +17,7 @@ jobs:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
         
-        security_control: ghcr.io/jitsecurity-controls/control-trivy-alpine:main
+        security_control: ghcr.io/jitsecurity-controls/control-trivy-alpine:latest
         security_control_args: --quiet config --severity HIGH,CRITICAL -f json --ignorefile /opt/.trivyignore \${WORK_DIR:-.}
         
         dispatch_type: workflow
@@ -26,6 +27,7 @@ jobs:
   enrich:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'enrich'
     runs-on: ubuntu-20.04
+    timeout-minutes: 20
     steps:
     - name: enrichment
       uses: jitsecurity-controls/jit-github-action@v2.2
@@ -43,6 +45,7 @@ jobs:
   iac-misconfig-detection-kubernetes:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'iac-misconfig-detection-kubernetes'
     runs-on: ubuntu-20.04
+    timeout-minutes: 20
     steps:
     - name: kubescape
       uses: jitsecurity-controls/jit-github-action@v2.2
@@ -57,9 +60,28 @@ jobs:
         context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
 
+  remediation-pr:
+    if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'remediation-pr'
+    runs-on: ubuntu-20.04
+    timeout-minutes: 20
+    steps:
+    - name: remediation-pr
+      uses: jitsecurity-controls/jit-github-action@v2.2
+      with:
+        docker_user: jit-bot
+        docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
+        
+        security_control: ghcr.io/jitsecurity-controls/open-remediation-pr-alpine:main
+        security_control_args: --github-token ${{fromJSON(github.event.inputs.client_payload).payload.github_token}} --fix-pr-config ${{fromJSON(github.event.inputs.client_payload).payload.fix_pr_config}} --output-file \$REPORT_FILE
+        security_control_output_file: /opt/code/jit-report/results.json
+        dispatch_type: workflow
+        context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
+        runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
+
   secret-detection:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'secret-detection'
     runs-on: ubuntu-20.04
+    timeout-minutes: 20
     steps:
     - name: gitleaks
       uses: jitsecurity-controls/jit-github-action@v2.2
@@ -67,7 +89,7 @@ jobs:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
         
-        security_control: ghcr.io/jitsecurity-controls/control-gitleaks-alpine:main
+        security_control: ghcr.io/jitsecurity-controls/control-gitleaks-alpine:latest
         security_control_args: detect --config \$GITLEAKS_CONFIG_FILE_PATH --source \${WORK_DIR:-.} -v --report-format json --report-path \$REPORT_FILE --redact --no-git --exit-code 0
         security_control_output_file: /tmp/report.json
         dispatch_type: workflow
@@ -77,6 +99,7 @@ jobs:
   software-component-analysis:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'software-component-analysis'
     runs-on: ubuntu-20.04
+    timeout-minutes: 20
     steps:
     - name: osv-scanner
       uses: jitsecurity-controls/jit-github-action@v2.2
@@ -84,7 +107,7 @@ jobs:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
         
-        security_control: ghcr.io/jitsecurity-controls/control-osv-scanner-alpine:main
+        security_control: ghcr.io/jitsecurity-controls/control-osv-scanner-alpine:latest
         security_control_args: --recursive \${WORK_DIR:-.}
         
         dispatch_type: workflow
@@ -94,6 +117,7 @@ jobs:
   software-component-analysis-go:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'software-component-analysis-go'
     runs-on: ubuntu-20.04
+    timeout-minutes: 20
     steps:
     - name: nancy
       uses: jitsecurity-controls/jit-github-action@v2.2
@@ -101,7 +125,7 @@ jobs:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
         
-        security_control: ghcr.io/jitsecurity-controls/control-nancy-alpine:main
+        security_control: ghcr.io/jitsecurity-controls/control-nancy-alpine:latest
         security_control_args: 
         
         dispatch_type: workflow
@@ -111,6 +135,7 @@ jobs:
   software-component-analysis-js:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'software-component-analysis-js'
     runs-on: ubuntu-20.04
+    timeout-minutes: 20
     steps:
     - name: npm-audit
       uses: jitsecurity-controls/jit-github-action@v2.2
@@ -118,7 +143,7 @@ jobs:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
         
-        security_control: ghcr.io/jitsecurity-controls/control-npm-audit-slim:main
+        security_control: ghcr.io/jitsecurity-controls/control-npm-audit-slim:latest
         security_control_args: 
         security_control_output_file: /code/jit-report/enriched-audit-results.json
         dispatch_type: workflow
