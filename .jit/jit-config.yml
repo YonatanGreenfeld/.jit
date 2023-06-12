@@ -1,1 +1,29 @@
 
+applications:
+- api_domain: api.staging.jit.io
+  application_name: AssetServiceStagingAPI
+  authentication_mode: selenium
+  exclude_paths:
+  - https://api.staging.jit.io/tenant/sign-up
+  - https://api.staging.jit.io/tenant/.*
+  login_page_url: https://platform.staging.jit.io/login
+  password: encrypted$AQICAHhD0n+Eqj0ZEMtRnCrRxu94Uld5QbHB2HR/ubkb7SdCcgE+8/F5wPU8pJ46rTVzj+cvAAAAqTCBpgYJKoZIhvcNAQcGoIGYMIGVAgEAMIGPBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDDyRUdkM2QYXz4k7cAIBEIBi4qmxED2/joMiMh+U6WtzDWC3cd/6Udji+mQGJpPlVXN/k3neT5yvEf2SUWeXUwHHY+uKpiEdhasIIBdTMJgrNRMg/BxwakBjqD1q0h+S4rseLvp7GUCH0736nuUOeJUFqXI=
+  password_css_selector: input[type=password]
+  password_ref: ${{ jit_secrets.api_scan_password }}
+  target_url: https://meshi-bucket.s3.amazonaws.com/openapi.json
+  type: api
+  username: guy+zap.staging@jit.io
+  username_css_selector: input[type=text]
+- api_domain: api.staging.jit.io
+  application_name: GuyStagingLOL
+  authentication_mode: selenium
+  exclude_paths:
+  - https://platform.staging.jit.io/logout
+  login_page_url: https://platform.staging.jit.io/login
+  password: encrypted$AQICAHhD0n+Eqj0ZEMtRnCrRxu94Uld5QbHB2HR/ubkb7SdCcgHvyjFv5dWezH2rrdZmKnwlAAAAqTCBpgYJKoZIhvcNAQcGoIGYMIGVAgEAMIGPBgkqhkiG9w0BBwEwHgYJYIZIAWUDBAEuMBEEDK85e2GGimNaOd46AAIBEIBi2ebWqjVr5xV4irKjDs4uXRh4r4Z69vnWWVlcmWxIL/OpUS9iykLz9wPOC1MgmjZ2b/ZHooSbXaCFKR5GoSi7JkoFrBJ7VdLDKPoJMWr44O1qBfbMVqmsTE3lT11ZOU/ih94=
+  password_css_selector: input[type=password]
+  password_ref: ${{ jit_secrets.web_scan_password }}
+  target_url: https://platform.staging.jit.io
+  type: web
+  username: guy+zap.staging@jit.io
+  username_css_selector: input[type=text]
