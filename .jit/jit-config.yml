@@ -1,7 +1,7 @@
 
 applications:
 - api_domain: api.staging.jit.io
-  application_name: AssetServiceStagingAPI
+  application_name: AssetServiceStagingAPI123
   authentication_mode: selenium
   exclude_paths:
   - https://api.staging.jit.io/tenant/sign-up
