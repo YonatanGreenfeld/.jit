@@ -166,4 +166,8 @@ items:
       ACOM-002. Set account contact information
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-account-contacts-config.yml@latest
+  - name: |
+      ACOM-001. Configure AWS account contacts
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-account-communication.yml@latest
 
