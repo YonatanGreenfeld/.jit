@@ -53,4 +53,8 @@ items:
       hard-coded
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-iam-no-hardcoded-secret.yml@latest
+  - name: |
+      IAM-004. Create individual identities (no shared credentials)
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-iam-no-shared-creds.yml@latest
 
