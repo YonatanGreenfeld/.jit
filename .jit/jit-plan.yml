@@ -79,8 +79,8 @@ items:
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-resiliency-rto.yml@latest
   - name: >
-      RES-001. Perform periodic recovery of the data to verify backup integrity
-      and processes
+      ARC-005. Create an incident response (IR) runbook for root account
+      credential misuse
     uses: >-
-      jitsecurity-controls/jit-plans/items/infrastructure/item-resiliency-testing.yml@latest
+      jitsecurity-controls/jit-plans/items/infrastructure/item-root-account-ir.yml@latest
 
