@@ -158,4 +158,8 @@ items:
       and processes
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-backup-recover-schedule.yml@latest
+  - name: |
+      BAR-001. Perform data backup automatically
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-backup-schedule.yml@latest
 
