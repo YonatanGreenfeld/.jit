@@ -100,4 +100,9 @@ items:
       SECOPS-001. Perform vulnerability management
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-secops-vulnerabiliy-mgt.yml@latest
+  - name: >
+      RES-001. Perform periodic recovery of the data to verify backup integrity
+      and processes
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-resiliency-testing.yml@latest
 
