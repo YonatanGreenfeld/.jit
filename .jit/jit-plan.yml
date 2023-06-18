@@ -149,4 +149,13 @@ items:
       access
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-cloudtrail-separate-account.yml@latest
+  - name: |
+      WAFR-001. Conduct periodic architecture reviews (minimum once every year)
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-arch-review.yml@latest
+  - name: >
+      BAR-002. Perform periodic recovery of the data to verify backup integrity
+      and processes
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-backup-recover-schedule.yml@latest
 
