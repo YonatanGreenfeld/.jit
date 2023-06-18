@@ -69,4 +69,8 @@ items:
       HOST-001. Confirm your hosting model
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-partner-hosting-model.yml@latest
+  - name: |
+      RES-004. Resiliency Testing
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-resiliency-rpo.yml@latest
 
