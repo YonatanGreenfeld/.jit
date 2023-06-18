@@ -35,4 +35,9 @@ items:
   - name: Verify that MFA for your GitHub organization is enabled
     uses: >-
       jitsecurity-controls/jit-plans/items/third_party_app/item-mfa-scm.yml@latest
+  - name: >
+      IAM-011. Encrypt all end user/customer credentials and hash passwords at
+      rest
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-iam-encrypt-creds-at-rest.yml@latest
 
