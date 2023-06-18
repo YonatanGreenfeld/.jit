@@ -40,4 +40,12 @@ items:
       rest
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-iam-encrypt-creds-at-rest.yml@latest
+  - name: |
+      IAM-006. Grant least privilege access
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-iam-least-privilege.yml@latest
+  - name: |
+      IAM-007. Manage access based on life cycle
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-iam-manage-access-lifecycle.yml@latest
 
