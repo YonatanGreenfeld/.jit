@@ -113,4 +113,8 @@ items:
       CAA-004. Use a value you generate for the external ID
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-cross-account-value-generation.yml@latest
+  - name: |
+      CAA-001. Use cross-account roles to access customer accounts
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-cross-account-roles.yml@latest
 
