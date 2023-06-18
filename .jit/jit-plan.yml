@@ -61,4 +61,12 @@ items:
       IAM-010. Store secrets securely
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-iam-store-secrets.yml@latest
+  - name: |
+      IAM-012. Use temporary credentials
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-iam-temp-creds.yml@latest
+  - name: |
+      HOST-001. Confirm your hosting model
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-partner-hosting-model.yml@latest
 
