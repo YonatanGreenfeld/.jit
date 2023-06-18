@@ -162,4 +162,8 @@ items:
       BAR-001. Perform data backup automatically
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-backup-schedule.yml@latest
+  - name: |
+      ACOM-002. Set account contact information
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-account-contacts-config.yml@latest
 
