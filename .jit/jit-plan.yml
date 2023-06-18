@@ -105,4 +105,8 @@ items:
       and processes
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-resiliency-testing.yml@latest
+  - name: |
+      IAM-008. Audit identities quarterly
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-iam-audit.yml@latest
 
