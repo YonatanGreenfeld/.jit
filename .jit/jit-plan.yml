@@ -130,4 +130,9 @@ items:
       CAA-007. Provide guidance or an automated setup mechanism
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-cross-account-automation.yml@latest
+  - name: >
+      CAA-003. Deprecate any historical use of customer-provided IAM
+      credentials.
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-cross-account-deprecate-historical-creds.yml@latest
 
