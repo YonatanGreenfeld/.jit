@@ -126,4 +126,8 @@ items:
       CAA-005. Ensure all external IDs are unique
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-cross-account-external-id-unique.yml@latest
+  - name: |
+      CAA-007. Provide guidance or an automated setup mechanism
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-cross-account-automation.yml@latest
 
