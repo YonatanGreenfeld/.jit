@@ -73,4 +73,9 @@ items:
       RES-004. Resiliency Testing
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-resiliency-rpo.yml@latest
+  - name: >
+      RES-002. Establish a Recovery Time Objective (RTO) to meet business needs
+      and expectations
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-resiliency-rto.yml@latest
 
