@@ -117,4 +117,9 @@ items:
       CAA-001. Use cross-account roles to access customer accounts
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-cross-account-roles.yml@latest
+  - name: >
+      CAA-002. Use external ID with cross-account roles to access customer
+      accounts
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-cross-account-external-ids.yml@latest
 
