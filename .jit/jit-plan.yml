@@ -109,4 +109,8 @@ items:
       IAM-008. Audit identities quarterly
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-iam-audit.yml@latest
+  - name: |
+      CAA-004. Use a value you generate for the external ID
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-cross-account-value-generation.yml@latest
 
