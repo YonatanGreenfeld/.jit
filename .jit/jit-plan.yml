@@ -135,4 +135,8 @@ items:
       credentials.
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-cross-account-deprecate-historical-creds.yml@latest
+  - name: |
+      CAA-006. Provide read-only access to external ID to customers
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-cross-account-external-id-ro.yml@latest
 
