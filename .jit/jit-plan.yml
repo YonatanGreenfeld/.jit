@@ -32,9 +32,6 @@ items:
       access
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-cloudtrail-separate-account.yml@latest
-  - name: Scan your code for vulnerabilities (SAST)
-    uses: >-
-      jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
   - name: >-
       RCVP-001. Establish a process to ensure that all required compliance
       standards are met
