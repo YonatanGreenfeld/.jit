@@ -12,7 +12,7 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: trivy
-      uses: jitsecurity-controls/jit-github-action@v2.2
+      uses: jitsecurity-controls/jit-github-action@v2.4
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -30,7 +30,7 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: enrichment
-      uses: jitsecurity-controls/jit-github-action@v2.2
+      uses: jitsecurity-controls/jit-github-action@v2.4
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -48,7 +48,7 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: kics
-      uses: jitsecurity-controls/jit-github-action@v2.2
+      uses: jitsecurity-controls/jit-github-action@v2.4
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -66,12 +66,12 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: kubescape
-      uses: jitsecurity-controls/jit-github-action@v2.2
+      uses: jitsecurity-controls/jit-github-action@v2.4
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
         
-        security_control: ghcr.io/jitsecurity-controls/control-kubescape-slim:main
+        security_control: ghcr.io/jitsecurity-controls/control-kubescape-slim:latest
         security_control_args: scan -v --format json --format-version v2 --output raw-kubescape-results.json .
         security_control_output_file: /code/results.json
         dispatch_type: workflow
@@ -84,7 +84,7 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: kics
-      uses: jitsecurity-controls/jit-github-action@v2.2
+      uses: jitsecurity-controls/jit-github-action@v2.4
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -102,7 +102,7 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: kics
-      uses: jitsecurity-controls/jit-github-action@v2.2
+      uses: jitsecurity-controls/jit-github-action@v2.4
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -120,7 +120,7 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: remediation-pr
-      uses: jitsecurity-controls/jit-github-action@v2.2
+      uses: jitsecurity-controls/jit-github-action@v2.4
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -138,7 +138,7 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: gitleaks
-      uses: jitsecurity-controls/jit-github-action@v2.2
+      uses: jitsecurity-controls/jit-github-action@v2.4
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -150,67 +150,13 @@ jobs:
         context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
         runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
 
-  software-component-analysis:
-    if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'software-component-analysis'
-    runs-on: ubuntu-20.04
-    timeout-minutes: 20
-    steps:
-    - name: osv-scanner
-      uses: jitsecurity-controls/jit-github-action@v2.2
-      with:
-        docker_user: jit-bot
-        docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
-        
-        security_control: ghcr.io/jitsecurity-controls/control-osv-scanner-alpine:latest
-        security_control_args: --recursive \${WORK_DIR:-.}
-        
-        dispatch_type: workflow
-        context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
-        runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
-
-  software-component-analysis-go:
-    if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'software-component-analysis-go'
-    runs-on: ubuntu-20.04
-    timeout-minutes: 20
-    steps:
-    - name: nancy
-      uses: jitsecurity-controls/jit-github-action@v2.2
-      with:
-        docker_user: jit-bot
-        docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
-        
-        security_control: ghcr.io/jitsecurity-controls/control-nancy-alpine:latest
-        security_control_args: 
-        
-        dispatch_type: workflow
-        context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
-        runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
-
-  software-component-analysis-js:
-    if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'software-component-analysis-js'
-    runs-on: ubuntu-20.04
-    timeout-minutes: 20
-    steps:
-    - name: npm-audit
-      uses: jitsecurity-controls/jit-github-action@v2.2
-      with:
-        docker_user: jit-bot
-        docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
-        
-        security_control: ghcr.io/jitsecurity-controls/control-npm-audit-slim:latest
-        security_control_args: 
-        security_control_output_file: /code/jit-report/enriched-audit-results.json
-        dispatch_type: workflow
-        context: ${{toJSON(fromJSON(github.event.inputs.client_payload).context)}}
-        runner_setup: ${{toJSON(fromJSON(github.event.inputs.client_payload).context.job.runner.setup)}}
-
   static-code-analysis-csharp:
     if: fromJSON(github.event.inputs.client_payload).payload.workflow_job_name == 'static-code-analysis-csharp'
     runs-on: ubuntu-20.04
     timeout-minutes: 20
     steps:
     - name: semgrep
-      uses: jitsecurity-controls/jit-github-action@v2.2
+      uses: jitsecurity-controls/jit-github-action@v2.4
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -228,7 +174,7 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: gosec
-      uses: jitsecurity-controls/jit-github-action@v2.2
+      uses: jitsecurity-controls/jit-github-action@v2.4
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -246,7 +192,7 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: semgrep
-      uses: jitsecurity-controls/jit-github-action@v2.2
+      uses: jitsecurity-controls/jit-github-action@v2.4
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -264,7 +210,7 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: semgrep
-      uses: jitsecurity-controls/jit-github-action@v2.2
+      uses: jitsecurity-controls/jit-github-action@v2.4
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -282,7 +228,7 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: semgrep
-      uses: jitsecurity-controls/jit-github-action@v2.2
+      uses: jitsecurity-controls/jit-github-action@v2.4
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -300,7 +246,7 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: semgrep
-      uses: jitsecurity-controls/jit-github-action@v2.2
+      uses: jitsecurity-controls/jit-github-action@v2.4
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -318,7 +264,7 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: semgrep
-      uses: jitsecurity-controls/jit-github-action@v2.2
+      uses: jitsecurity-controls/jit-github-action@v2.4
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -336,7 +282,7 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: semgrep
-      uses: jitsecurity-controls/jit-github-action@v2.2
+      uses: jitsecurity-controls/jit-github-action@v2.4
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -354,7 +300,7 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: semgrep
-      uses: jitsecurity-controls/jit-github-action@v2.2
+      uses: jitsecurity-controls/jit-github-action@v2.4
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
