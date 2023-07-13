@@ -27,4 +27,7 @@ items:
       IAM-009. Detect and remediate exposed secrets
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-aws-ftr-secret-detection.yml@latest
+  - name: Scan your infrastructure-as-code (IaC) for misconfigurations
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-iac-misconfiguration-detection.yml@latest
 
