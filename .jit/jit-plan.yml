@@ -23,8 +23,4 @@ items:
   - name: Scan your web application for vulnerabilities
     uses: >-
       jitsecurity-controls/jit-plans/items/runtime/item-web-app-scanner.yml@latest
-  - name: |
-      IAM-009. Detect and remediate exposed secrets
-    uses: >-
-      jitsecurity-controls/jit-plans/items/infrastructure/item-aws-ftr-secret-detection.yml@latest
 
