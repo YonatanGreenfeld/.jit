@@ -10,9 +10,7 @@ tags: []
 items:
   - name: Scan your API for vulnerabilities
     uses: jitsecurity-controls/jit-plans/items/runtime/item-api-security.yml@latest
-  - name: IAM-009. Detect and remediate exposed secrets
-    uses: >-
-      jitsecurity-controls/jit-plans/items/infrastructure/item-aws-ftr-secret-detection.yml@latest
+
   - name: Scan your Dockerfiles for vulnerabilities
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-container-scan.yml@latest
