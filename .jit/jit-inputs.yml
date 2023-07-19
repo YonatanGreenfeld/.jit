@@ -1,4 +1,5 @@
 bar:
-  response: success
+  comment: duuuuuude
+  status: failed
 foo:
   response: nope
