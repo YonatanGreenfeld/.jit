@@ -1,2 +1,4 @@
+bar:
+  response: success
 foo:
   response: nope
