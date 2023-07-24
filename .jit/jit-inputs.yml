@@ -1,3 +1,3 @@
-bar:
-  comment: 'yes'
-  status: failed
+item-arch-review:
+  comment: 'thx'
+  status: success
