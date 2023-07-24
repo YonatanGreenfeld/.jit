@@ -1,7 +1,7 @@
 aws:
 - account_id: '859000334327'
   regions:
-  - eu-west-1
+  - us-east-1
   type: account
 jira:
   my-jira:
