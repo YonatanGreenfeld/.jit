@@ -10,6 +10,9 @@ tags: []
 items:
   - name: Scan your API for vulnerabilities
     uses: jitsecurity-controls/jit-plans/items/runtime/item-api-security.yml@latest
+  - name: CTL-003. Protect log storage from unintended access
+    uses: >-
+      jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-access-protection.yml@latest
   - name: CTL-001. Configure CloudTrail in all AWS Accounts and in all Regions
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-config.yml@latest
@@ -35,10 +38,11 @@ items:
   - name: Scan your web application for vulnerabilities
     uses: >-
       jitsecurity-controls/jit-plans/items/runtime/item-web-app-scanner.yml@latest
-  - name: |
-      CTL-003. Protect log storage from unintended access
+  - name: >
+      IAM-001. Enable multi-factor authentication for all Human Identities with
+      AWS access
     uses: >-
-      jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-access-protection.yml@latest
+      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-mfa.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
