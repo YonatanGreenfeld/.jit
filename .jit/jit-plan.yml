@@ -12,9 +12,6 @@ items:
     uses: jitsecurity-controls/jit-plans/items/runtime/item-api-security.yml@latest
   - name: WAFR-001. Conduct periodic architecture reviews (minimum once every year)
     uses: jitsecurity-controls/jit-plans/items/runtime/item-arch-review.yml@latest
-  - name: CTL-001. Configure CloudTrail in all AWS Accounts and in all Regions
-    uses: >-
-      jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-config.yml@latest
   - name: Scan your code for vulnerabilities (SAST)
     uses: >-
       jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
