@@ -12,6 +12,12 @@ items:
     uses: jitsecurity-controls/jit-plans/items/runtime/item-api-security.yml@latest
   - name: WAFR-001. Conduct periodic architecture reviews (minimum once every year)
     uses: jitsecurity-controls/jit-plans/items/runtime/item-arch-review.yml@latest
+  - name: CTL-003. Protect log storage from unintended access
+    uses: >-
+      jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-access-protection.yml@latest
+  - name: CTL-001. Configure CloudTrail in all AWS Accounts and in all Regions
+    uses: >-
+      jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-config.yml@latest
   - name: Scan your code for vulnerabilities (SAST)
     uses: >-
       jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
@@ -35,13 +41,9 @@ items:
     uses: >-
       jitsecurity-controls/jit-plans/items/runtime/item-web-app-scanner.yml@latest
   - name: |
-      CTL-003. Protect log storage from unintended access
+      CTL-004. Enable CloudTrail log file integrity validation
     uses: >-
-      jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-access-protection.yml@latest
-  - name: |
-      CTL-001. Configure CloudTrail in all AWS Accounts and in all Regions
-    uses: >-
-      jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-config.yml@latest
+      jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-integrity-validation.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
@@ -59,13 +61,6 @@ override:
               uses: >-
                 899025839375.dkr.ecr.us-east-1.amazonaws.com/prowler:not-hardened-sc-18604-prowler-add-support-of-specific-checks-final
     runtime-misconfiguration-detection-cloudtrail-config:
-      jobs:
-        runtime-misconfig-detection-aws:
-          steps:
-            - name: Run Prowler For AWS
-              uses: >-
-                899025839375.dkr.ecr.us-east-1.amazonaws.com/prowler:not-hardened-sc-18604-prowler-add-support-of-specific-checks-final
-    runtime-misconfiguration-detection-cloudtrail-integrity-validation:
       jobs:
         runtime-misconfig-detection-aws:
           steps:
