@@ -43,6 +43,10 @@ items:
       AWS access
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-mfa.yml@latest
+  - name: |
+      CTL-004. Enable CloudTrail log file integrity validation
+    uses: >-
+      jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-integrity-validation.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
