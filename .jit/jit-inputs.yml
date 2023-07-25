@@ -1,3 +1,6 @@
+bar:
+  comment: 'no'
+  status: failed
 item-arch-review:
-  comment: 'thx'
+  comment: thx
   status: passed
