@@ -46,18 +46,18 @@ override:
           steps:
             - name: Run Prowler For AWS
               uses: >-
-                899025839375.dkr.ecr.us-east-1.amazonaws.com/prowler:sc-18604-prowler-add-support-of-specific-checks-final
+                899025839375.dkr.ecr.us-east-1.amazonaws.com/prowler:sc-18604-test-prowler
     runtime-misconfiguration-detection-cloudtrail-access-protection:
       jobs:
         runtime-misconfig-detection-aws:
           steps:
             - name: Run Prowler For AWS
               uses: >-
-                899025839375.dkr.ecr.us-east-1.amazonaws.com/prowler:sc-18604-prowler-add-support-of-specific-checks-final
+                899025839375.dkr.ecr.us-east-1.amazonaws.com/prowler:sc-18604-test-prowler
     runtime-misconfiguration-detection-cloudtrail-config:
       jobs:
         runtime-misconfig-detection-aws:
           steps:
             - name: Run Prowler For AWS
               uses: >-
-                899025839375.dkr.ecr.us-east-1.amazonaws.com/prowler:sc-18604-prowler-add-support-of-specific-checks-final
+                899025839375.dkr.ecr.us-east-1.amazonaws.com/prowler:sc-18604-test-prowler
