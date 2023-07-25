@@ -35,10 +35,6 @@ items:
   - name: Scan your web application for vulnerabilities
     uses: >-
       jitsecurity-controls/jit-plans/items/runtime/item-web-app-scanner.yml@latest
-  - name: |
-      CTL-003. Protect log storage from unintended access
-    uses: >-
-      jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-access-protection.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
@@ -56,7 +52,7 @@ override:
               uses: >-
                 899025839375.dkr.ecr.us-east-1.amazonaws.com/prowler:not-hardened-sc-18604-prowler-add-support-of-specific-checks-fix
               with:
-                args: --excluded-checks s3_bucket_public_access
+                args: '--excluded-checks s3_bucket_public_access'
     runtime-misconfiguration-detection-cloudtrail-config:
       jobs:
         runtime-misconfig-detection-aws:
@@ -65,4 +61,4 @@ override:
               uses: >-
                 899025839375.dkr.ecr.us-east-1.amazonaws.com/prowler:not-hardened-sc-18604-prowler-add-support-of-specific-checks-fix
               with:
-                args: --excluded-checks s3_bucket_public_access
+                args: '--excluded-checks s3_bucket_public_access'
