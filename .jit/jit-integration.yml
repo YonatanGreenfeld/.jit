@@ -13,5 +13,5 @@ jira:
       fields:
         customfield_10034:
         - value: '1'
-      issue_type_id: 10002
-      project_id: 10011
+      issue_type_id: 10302
+      project_id: 10001
