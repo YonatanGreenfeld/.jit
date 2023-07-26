@@ -1,2 +1,5 @@
 bar:
   status: failed
+item-partner-hosting-model:
+  note: Noice
+  status: failed
