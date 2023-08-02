@@ -67,7 +67,7 @@ items:
     uses: >-
       jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
     input:
-      status: n/a
+      status: failed
       note: New text just changed
 override:
   workflows:
