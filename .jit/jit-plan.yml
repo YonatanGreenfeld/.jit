@@ -74,6 +74,11 @@ items:
       IAM-003. Use strong password policy
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-no-strong-policy.yml@latest
+  - name: >
+      S3-001. Review all Amazon S3 buckets to determine appropriate access
+      levels
+    uses: >-
+      jitsecurity-controls/jit-plans/items/amazon_s3_bucket_access/item-s3-review-access.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
