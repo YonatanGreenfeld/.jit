@@ -61,7 +61,7 @@ items:
       jitsecurity-controls/jit-plans/items/architecture_review/item-arch-shared-responsibility.yml@latest
     input:
       status: failed
-      note: New text
+      note: New text just changed
   - name: |
       HOST-001. Confirm your hosting model
     uses: >-
