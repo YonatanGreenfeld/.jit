@@ -15,7 +15,7 @@ items:
       jitsecurity-controls/jit-plans/items/architecture_review/item-arch-shared-responsibility.yml@latest
     input:
       status: passed
-      note: Add note
+      note: asd
   - name: Scan your API for vulnerabilities
     uses: jitsecurity-controls/jit-plans/items/runtime/item-api-security.yml@latest
   - name: CTL-003. Protect log storage from unintended access
