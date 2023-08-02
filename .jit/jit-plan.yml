@@ -66,9 +66,6 @@ items:
       HOST-001. Confirm your hosting model
     uses: >-
       jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
-    input:
-      status: n/a
-      note: New text just changed
 override:
   workflows:
     runtime-misconfiguration-detection:
