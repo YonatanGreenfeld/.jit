@@ -41,6 +41,14 @@ items:
   - name: HOST-001. Confirm your hosting model
     uses: >-
       jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
+  - name: ARC-001. Use root user only by exception
+    uses: >-
+      jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-exception.yml@latest
+  - name: >-
+      ARC-003. Enable multi-factor authentication (MFA) on the root user for all
+      AWS accounts
+    uses: >-
+      jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-mfa.yml@latest
   - name: Scan infrastructure for runtime misconfigurations
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-runtime-misconfiguration-detection.yml@latest
@@ -55,14 +63,12 @@ items:
     uses: >-
       jitsecurity-controls/jit-plans/items/runtime/item-web-app-scanner.yml@latest
   - name: |
-      ARC-001. Use root user only by exception
+      WAFR-001. Conduct periodic architecture reviews (minimum once every year)
     uses: >-
-      jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-exception.yml@latest
-  - name: >
-      ARC-003. Enable multi-factor authentication (MFA) on the root user for all
-      AWS accounts
-    uses: >-
-      jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-mfa.yml@latest
+      jitsecurity-controls/jit-plans/items/architecture_review/item-arch-review.yml@latest
+    input:
+      status: passed
+      note: '123'
 override:
   workflows:
     runtime-misconfiguration-detection:
