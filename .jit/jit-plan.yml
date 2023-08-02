@@ -70,13 +70,6 @@ items:
     input:
       status: failed
       note: New text
-  - name: |
-      HOST-001. Confirm your hosting model
-    uses: >-
-      jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
-    input:
-      status: failed
-      note: Noice!!!!
 override:
   workflows:
     runtime-misconfiguration-detection:
