@@ -84,6 +84,10 @@ items:
       become public
     uses: >-
       jitsecurity-controls/jit-plans/items/amazon_s3_bucket_access/item-s3-monitoring-public.yml@latest
+  - name: |
+      S3-002. Restrict access to S3 buckets that should not have public access
+    uses: >-
+      jitsecurity-controls/jit-plans/items/amazon_s3_bucket_access/item-s3-no-public-access.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
