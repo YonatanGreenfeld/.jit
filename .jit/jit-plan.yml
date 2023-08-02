@@ -20,9 +20,6 @@ items:
       HOST-001. Confirm your hosting model
     uses: >-
       jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
-    input:
-      status: failed
-      note: Noice!
   - name: Scan your API for vulnerabilities
     uses: jitsecurity-controls/jit-plans/items/runtime/item-api-security.yml@latest
   - name: CTL-003. Protect log storage from unintended access
