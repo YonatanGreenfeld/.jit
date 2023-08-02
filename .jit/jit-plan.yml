@@ -8,6 +8,13 @@ references:
   - https://www.jit.io
 tags: []
 items:
+  - name: |
+      HOST-001. Confirm your hosting model
+    uses: >-
+      jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
+    input:
+      status: passed
+      note: thx
   - name: >
       SUP-001. Enable AWS Business Support (or greater) on all production AWS
       accounts
@@ -63,9 +70,6 @@ items:
   - name: IAM-003. Use strong password policy
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-no-strong-policy.yml@latest
-  - name: HOST-001. Confirm your hosting model
-    uses: >-
-      jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
   - name: ARC-001. Use root user only by exception
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-exception.yml@latest
