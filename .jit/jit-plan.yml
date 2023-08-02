@@ -63,14 +63,6 @@ items:
     uses: >-
       jitsecurity-controls/jit-plans/items/runtime/item-web-app-scanner.yml@latest
   - name: |
-      ARC-004. Remove access keys for the root user
-    uses: >-
-      jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-keys.yml@latest
-  - name: |
-      IAM-003. Use strong password policy
-    uses: >-
-      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-no-strong-policy.yml@latest
-  - name: |
       IAM-002. Rotate credentials regularly
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-creds-rotation.yml@latest
