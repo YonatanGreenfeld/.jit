@@ -79,6 +79,11 @@ items:
       levels
     uses: >-
       jitsecurity-controls/jit-plans/items/amazon_s3_bucket_access/item-s3-review-access.yml@latest
+  - name: >
+      S3-003. Implement monitoring and alerting to identify when S3 buckets
+      become public
+    uses: >-
+      jitsecurity-controls/jit-plans/items/amazon_s3_bucket_access/item-s3-monitoring-public.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
