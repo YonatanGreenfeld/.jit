@@ -60,7 +60,7 @@ items:
     uses: >-
       jitsecurity-controls/jit-plans/items/architecture_review/item-arch-shared-responsibility.yml@latest
     input:
-      status: failed
+      status: passed
       note: New text just changed
   - name: |
       HOST-001. Confirm your hosting model
