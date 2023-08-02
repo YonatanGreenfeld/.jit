@@ -8,6 +8,13 @@ references:
   - https://www.jit.io
 tags: []
 items:
+  - name: |
+      HOST-001. Confirm your hosting model
+    uses: >-
+      jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
+    input:
+      status: failed
+      note: Add status
   - name: Scan your API for vulnerabilities
     uses: jitsecurity-controls/jit-plans/items/runtime/item-api-security.yml@latest
   - name: >-
@@ -38,17 +45,23 @@ items:
   - name: Scan your infrastructure-as-code (IaC) for misconfigurations
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-iac-misconfiguration-detection.yml@latest
+  - name: IAM-002. Rotate credentials regularly
+    uses: >-
+      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-creds-rotation.yml@latest
   - name: >-
       IAM-001. Enable multi-factor authentication for all Human Identities with
       AWS access
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-mfa.yml@latest
-  - name: HOST-001. Confirm your hosting model
+  - name: IAM-003. Use strong password policy
     uses: >-
-      jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
+      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-no-strong-policy.yml@latest
   - name: ARC-001. Use root user only by exception
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-exception.yml@latest
+  - name: ARC-004. Remove access keys for the root user
+    uses: >-
+      jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-keys.yml@latest
   - name: >-
       ARC-003. Enable multi-factor authentication (MFA) on the root user for all
       AWS accounts
@@ -57,37 +70,24 @@ items:
   - name: Scan infrastructure for runtime misconfigurations
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-runtime-misconfiguration-detection.yml@latest
+  - name: >-
+      S3-003. Implement monitoring and alerting to identify when S3 buckets
+      become public
+    uses: >-
+      jitsecurity-controls/jit-plans/items/amazon_s3_bucket_access/item-s3-monitoring-public.yml@latest
+  - name: S3-002. Restrict access to S3 buckets that should not have public access
+    uses: >-
+      jitsecurity-controls/jit-plans/items/amazon_s3_bucket_access/item-s3-no-public-access.yml@latest
+  - name: >-
+      S3-001. Review all Amazon S3 buckets to determine appropriate access
+      levels
+    uses: >-
+      jitsecurity-controls/jit-plans/items/amazon_s3_bucket_access/item-s3-review-access.yml@latest
   - name: Scan code for hard-coded secrets
     uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
   - name: Scan your web application for vulnerabilities
     uses: >-
       jitsecurity-controls/jit-plans/items/runtime/item-web-app-scanner.yml@latest
-  - name: |
-      IAM-002. Rotate credentials regularly
-    uses: >-
-      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-creds-rotation.yml@latest
-  - name: |
-      ARC-004. Remove access keys for the root user
-    uses: >-
-      jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-keys.yml@latest
-  - name: |
-      IAM-003. Use strong password policy
-    uses: >-
-      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-no-strong-policy.yml@latest
-  - name: >
-      S3-001. Review all Amazon S3 buckets to determine appropriate access
-      levels
-    uses: >-
-      jitsecurity-controls/jit-plans/items/amazon_s3_bucket_access/item-s3-review-access.yml@latest
-  - name: >
-      S3-003. Implement monitoring and alerting to identify when S3 buckets
-      become public
-    uses: >-
-      jitsecurity-controls/jit-plans/items/amazon_s3_bucket_access/item-s3-monitoring-public.yml@latest
-  - name: |
-      S3-002. Restrict access to S3 buckets that should not have public access
-    uses: >-
-      jitsecurity-controls/jit-plans/items/amazon_s3_bucket_access/item-s3-no-public-access.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
