@@ -66,6 +66,10 @@ items:
       ARC-004. Remove access keys for the root user
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-keys.yml@latest
+  - name: |
+      IAM-003. Use strong password policy
+    uses: >-
+      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-no-strong-policy.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
