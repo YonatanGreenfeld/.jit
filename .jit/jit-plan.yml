@@ -8,49 +8,26 @@ references:
   - https://www.jit.io
 tags: []
 items:
-  - name: >
-      IAM-009. Ensure all credentials used by your applications are not
-      hard-coded
-    uses: >-
-      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-aws-ftr-secret-detection.yml@latest
-  - name: >
-      CTL-002. Store logs in in a separate administrative domain with limited
-      access
-    uses: >-
-      jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-separate-account.yml@latest
-    input:
-      status: passed
-      note: yes4
-  - name: |
-      ACOM-002. Set account contact information
-    uses: >-
-      jitsecurity-controls/jit-plans/items/communication_with_aws/item-account-contacts-config.yml@latest
-    input:
-      status: passed
-      note: yes3
-  - name: |
-      ACOM-001. Configure AWS account contacts
+  - name: ACOM-001. Configure AWS account contacts
     uses: >-
       jitsecurity-controls/jit-plans/items/communication_with_aws/item-account-communication.yml@latest
     input:
-      status: passed
       note: yes2
-  - name: >
-      ARC-005. Create an incident response (IR) runbook for root account
-      credential misuse
-    uses: >-
-      jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-ir.yml@latest
-    input:
       status: passed
-      note: 'yes'
+  - name: ACOM-002. Set account contact information
+    uses: >-
+      jitsecurity-controls/jit-plans/items/communication_with_aws/item-account-contacts-config.yml@latest
+    input:
+      note: yes3
+      status: passed
+  - name: Scan your API for vulnerabilities
+    uses: jitsecurity-controls/jit-plans/items/runtime/item-api-security.yml@latest
   - name: WAFR-001. Conduct periodic architecture reviews (minimum once every year)
     uses: >-
       jitsecurity-controls/jit-plans/items/architecture_review/item-arch-review.yml@latest
     input:
+      note: It&amp;amp;#39;s ok now, we do it twice a year
       status: passed
-      note: It&amp;#39;s ok now, we do it twice a year
-  - name: Scan your API for vulnerabilities
-    uses: jitsecurity-controls/jit-plans/items/runtime/item-api-security.yml@latest
   - name: >-
       WAFR-002. Review the AWS Shared Responsibility Models for Security and
       Resiliency
@@ -59,6 +36,11 @@ items:
     input:
       note: Added value
       status: n/a
+  - name: >-
+      IAM-009. Ensure all credentials used by your applications are not
+      hard-coded
+    uses: >-
+      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-aws-ftr-secret-detection.yml@latest
   - name: CTL-003. Protect log storage from unintended access
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-access-protection.yml@latest
@@ -68,6 +50,14 @@ items:
   - name: CTL-004. Enable CloudTrail log file integrity validation
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-integrity-validation.yml@latest
+  - name: >-
+      CTL-002. Store logs in in a separate administrative domain with limited
+      access
+    uses: >-
+      jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-separate-account.yml@latest
+    input:
+      note: yes4
+      status: passed
   - name: Scan your code for vulnerabilities (SAST)
     uses: >-
       jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
@@ -87,15 +77,17 @@ items:
       AWS access
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-mfa.yml@latest
-  - name: HOST-001. Confirm your hosting model
-    uses: >-
-      jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
-    input:
-      note: thx
-      status: passed
   - name: ARC-001. Use root user only by exception
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-exception.yml@latest
+  - name: >-
+      ARC-005. Create an incident response (IR) runbook for root account
+      credential misuse
+    uses: >-
+      jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-ir.yml@latest
+    input:
+      note: null
+      status: passed
   - name: ARC-004. Remove access keys for the root user
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-keys.yml@latest
