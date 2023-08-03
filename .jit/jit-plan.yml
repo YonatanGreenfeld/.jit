@@ -68,7 +68,7 @@ items:
     uses: >-
       jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
     input:
-      status: n/a
+      status: passed
       note: HOST-001
   - name: ARC-001. Use root user only by exception
     uses: >-
