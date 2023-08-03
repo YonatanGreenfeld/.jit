@@ -8,6 +8,13 @@ references:
   - https://www.jit.io
 tags: []
 items:
+  - name: |
+      ACOM-001. Configure AWS account contacts
+    uses: >-
+      jitsecurity-controls/jit-plans/items/communication_with_aws/item-account-communication.yml@latest
+    input:
+      status: failed
+      note: failed ACOM-001
   - name: ACOM-002. Set account contact information
     uses: >-
       jitsecurity-controls/jit-plans/items/communication_with_aws/item-account-contacts-config.yml@latest
