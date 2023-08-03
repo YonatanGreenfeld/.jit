@@ -127,6 +127,14 @@ items:
     input:
       status: failed
       note: value
+  - name: >
+      ARC-005. Create an incident response (IR) runbook for root account
+      credential misuse
+    uses: >-
+      jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-ir.yml@latest
+    input:
+      status: failed
+      note: foobar
 override:
   workflows:
     runtime-misconfiguration-detection:
