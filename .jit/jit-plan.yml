@@ -8,21 +8,14 @@ references:
   - https://www.jit.io
 tags: []
 items:
-  - name: |
-      HOST-001. Confirm your hosting model
-    uses: >-
-      jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
-    input:
-      status: passed
-      note: thx
   - name: >
-      SUP-001. Enable AWS Business Support (or greater) on all production AWS
-      accounts
+      WAFR-002. Review the AWS Shared Responsibility Models for Security and
+      Resiliency
     uses: >-
-      jitsecurity-controls/jit-plans/items/support_level/item-support-business.yml@latest
+      jitsecurity-controls/jit-plans/items/architecture_review/item-arch-shared-responsibility.yml@latest
     input:
-      status: passed
-      note: yay :)
+      status: n/a
+      note: Added value
   - name: Scan your API for vulnerabilities
     uses: jitsecurity-controls/jit-plans/items/runtime/item-api-security.yml@latest
   - name: WAFR-001. Conduct periodic architecture reviews (minimum once every year)
@@ -31,11 +24,6 @@ items:
     input:
       note: jhjhjh
       status: passed
-  - name: >-
-      WAFR-002. Review the AWS Shared Responsibility Models for Security and
-      Resiliency
-    uses: >-
-      jitsecurity-controls/jit-plans/items/architecture_review/item-arch-shared-responsibility.yml@latest
   - name: CTL-003. Protect log storage from unintended access
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-access-protection.yml@latest
@@ -70,6 +58,12 @@ items:
   - name: IAM-003. Use strong password policy
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-no-strong-policy.yml@latest
+  - name: HOST-001. Confirm your hosting model
+    uses: >-
+      jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
+    input:
+      note: thx
+      status: passed
   - name: ARC-001. Use root user only by exception
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-exception.yml@latest
@@ -99,6 +93,14 @@ items:
       jitsecurity-controls/jit-plans/items/amazon_s3_bucket_access/item-s3-review-access.yml@latest
   - name: Scan code for hard-coded secrets
     uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
+  - name: >-
+      SUP-001. Enable AWS Business Support (or greater) on all production AWS
+      accounts
+    uses: >-
+      jitsecurity-controls/jit-plans/items/support_level/item-support-business.yml@latest
+    input:
+      note: yay :)
+      status: passed
   - name: Scan your web application for vulnerabilities
     uses: >-
       jitsecurity-controls/jit-plans/items/runtime/item-web-app-scanner.yml@latest
