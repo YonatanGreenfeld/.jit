@@ -8,13 +8,12 @@ references:
   - https://www.jit.io
 tags: []
 items:
-  - name: |
-      ACOM-001. Configure AWS account contacts
+  - name: ACOM-001. Configure AWS account contacts
     uses: >-
       jitsecurity-controls/jit-plans/items/communication_with_aws/item-account-communication.yml@latest
     input:
-      status: failed
       note: failed ACOM-001
+      status: failed
   - name: ACOM-002. Set account contact information
     uses: >-
       jitsecurity-controls/jit-plans/items/communication_with_aws/item-account-contacts-config.yml@latest
@@ -27,8 +26,8 @@ items:
     uses: >-
       jitsecurity-controls/jit-plans/items/architecture_review/item-arch-review.yml@latest
     input:
-      status: passed
       note: Its ok now, we do it twice a year
+      status: passed
   - name: >-
       WAFR-002. Review the AWS Shared Responsibility Models for Security and
       Resiliency
@@ -42,8 +41,7 @@ items:
       hard-coded
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-aws-ftr-secret-detection.yml@latest
-  - name: |
-      CTL-003. Protect log storage from unintended access
+  - name: CTL-003. Protect log storage from unintended access
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-access-protection.yml@latest
   - name: CTL-001. Configure CloudTrail in all AWS Accounts and in all Regions
@@ -88,8 +86,8 @@ items:
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-ir.yml@latest
     input:
-      status: passed
       note: wow wow wow
+      status: passed
   - name: ARC-004. Remove access keys for the root user
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-keys.yml@latest
@@ -127,6 +125,13 @@ items:
   - name: Scan your web application for vulnerabilities
     uses: >-
       jitsecurity-controls/jit-plans/items/runtime/item-web-app-scanner.yml@latest
+  - name: |
+      HOST-001. Confirm your hosting model
+    uses: >-
+      jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
+    input:
+      status: passed
+      note: HOST-001
 override:
   workflows:
     runtime-misconfiguration-detection:
