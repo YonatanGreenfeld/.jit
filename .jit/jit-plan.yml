@@ -8,13 +8,21 @@ references:
   - https://www.jit.io
 tags: []
 items:
+  - name: >
+      ARC-005. Create an incident response (IR) runbook for root account
+      credential misuse
+    uses: >-
+      jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-ir.yml@latest
+    input:
+      status: passed
+      note: 'yes'
   - name: Scan your API for vulnerabilities
     uses: jitsecurity-controls/jit-plans/items/runtime/item-api-security.yml@latest
   - name: WAFR-001. Conduct periodic architecture reviews (minimum once every year)
     uses: >-
       jitsecurity-controls/jit-plans/items/architecture_review/item-arch-review.yml@latest
     input:
-      note: It&#39;s ok now, we do it twice a year
+      note: It&amp;#39;s ok now, we do it twice a year
       status: passed
   - name: >-
       WAFR-002. Review the AWS Shared Responsibility Models for Security and
@@ -47,6 +55,11 @@ items:
   - name: Scan your infrastructure-as-code (IaC) for misconfigurations
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-iac-misconfiguration-detection.yml@latest
+  - name: >-
+      IAM-001. Enable multi-factor authentication for all Human Identities with
+      AWS access
+    uses: >-
+      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-mfa.yml@latest
   - name: HOST-001. Confirm your hosting model
     uses: >-
       jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
@@ -93,11 +106,6 @@ items:
   - name: Scan your web application for vulnerabilities
     uses: >-
       jitsecurity-controls/jit-plans/items/runtime/item-web-app-scanner.yml@latest
-  - name: >
-      IAM-001. Enable multi-factor authentication for all Human Identities with
-      AWS access
-    uses: >-
-      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-mfa.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
