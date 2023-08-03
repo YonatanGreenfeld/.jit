@@ -26,7 +26,7 @@ items:
     uses: >-
       jitsecurity-controls/jit-plans/items/architecture_review/item-arch-review.yml@latest
     input:
-      note: It&amp;amp;#39;s ok now, we do it twice a year
+      note: Its ok now, we do it twice a year
       status: passed
   - name: >-
       WAFR-002. Review the AWS Shared Responsibility Models for Security and
