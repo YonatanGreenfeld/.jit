@@ -12,7 +12,7 @@ items:
     uses: >-
       jitsecurity-controls/jit-plans/items/communication_with_aws/item-account-communication.yml@latest
     input:
-      note: yes2^2^2
+      note: yes2^2^2==4
       status: n/a
   - name: ACOM-002. Set account contact information
     uses: >-
