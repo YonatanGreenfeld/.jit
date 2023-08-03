@@ -69,6 +69,12 @@ items:
       AWS access
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-mfa.yml@latest
+  - name: HOST-001. Confirm your hosting model
+    uses: >-
+      jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
+    input:
+      note: HOST-001
+      status: passed
   - name: ARC-001. Use root user only by exception
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-exception.yml@latest
@@ -78,7 +84,7 @@ items:
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-ir.yml@latest
     input:
-      status: failed
+      status: n/a
       note: wow wow wow
   - name: ARC-004. Remove access keys for the root user
     uses: >-
@@ -117,13 +123,6 @@ items:
   - name: Scan your web application for vulnerabilities
     uses: >-
       jitsecurity-controls/jit-plans/items/runtime/item-web-app-scanner.yml@latest
-  - name: |
-      HOST-001. Confirm your hosting model
-    uses: >-
-      jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
-    input:
-      status: passed
-      note: HOST-001
 override:
   workflows:
     runtime-misconfiguration-detection:
