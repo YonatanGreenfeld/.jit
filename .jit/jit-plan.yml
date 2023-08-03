@@ -8,6 +8,14 @@ references:
   - https://www.jit.io
 tags: []
 items:
+  - name: >
+      CTL-002. Store logs in in a separate administrative domain with limited
+      access
+    uses: >-
+      jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-separate-account.yml@latest
+    input:
+      status: passed
+      note: yes4
   - name: |
       ACOM-002. Set account contact information
     uses: >-
@@ -30,14 +38,14 @@ items:
     input:
       status: passed
       note: 'yes'
-  - name: Scan your API for vulnerabilities
-    uses: jitsecurity-controls/jit-plans/items/runtime/item-api-security.yml@latest
   - name: WAFR-001. Conduct periodic architecture reviews (minimum once every year)
     uses: >-
       jitsecurity-controls/jit-plans/items/architecture_review/item-arch-review.yml@latest
     input:
-      note: It&amp;#39;s ok now, we do it twice a year
       status: passed
+      note: It&amp;#39;s ok now, we do it twice a year
+  - name: Scan your API for vulnerabilities
+    uses: jitsecurity-controls/jit-plans/items/runtime/item-api-security.yml@latest
   - name: >-
       WAFR-002. Review the AWS Shared Responsibility Models for Security and
       Resiliency
