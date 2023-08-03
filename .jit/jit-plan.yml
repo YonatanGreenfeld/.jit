@@ -8,15 +8,14 @@ references:
   - https://www.jit.io
 tags: []
 items:
-  - name: |
-      WAFR-001. Conduct periodic architecture reviews (minimum once every year)
+  - name: Scan your API for vulnerabilities
+    uses: jitsecurity-controls/jit-plans/items/runtime/item-api-security.yml@latest
+  - name: WAFR-001. Conduct periodic architecture reviews (minimum once every year)
     uses: >-
       jitsecurity-controls/jit-plans/items/architecture_review/item-arch-review.yml@latest
     input:
+      note: It&#39;s ok now, we do it twice a year
       status: passed
-      note: It's ok now, we do it twice a year
-  - name: Scan your API for vulnerabilities
-    uses: jitsecurity-controls/jit-plans/items/runtime/item-api-security.yml@latest
   - name: >-
       WAFR-002. Review the AWS Shared Responsibility Models for Security and
       Resiliency
@@ -51,11 +50,6 @@ items:
   - name: IAM-002. Rotate credentials regularly
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-creds-rotation.yml@latest
-  - name: >-
-      IAM-001. Enable multi-factor authentication for all Human Identities with
-      AWS access
-    uses: >-
-      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-mfa.yml@latest
   - name: IAM-003. Use strong password policy
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-no-strong-policy.yml@latest
