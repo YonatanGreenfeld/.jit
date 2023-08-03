@@ -8,6 +8,13 @@ references:
   - https://www.jit.io
 tags: []
 items:
+  - name: |
+      WAFR-001. Conduct periodic architecture reviews (minimum once every year)
+    uses: >-
+      jitsecurity-controls/jit-plans/items/architecture_review/item-arch-review.yml@latest
+    input:
+      status: failed
+      note: jhjhjh
   - name: >
       SUP-001. Enable AWS Business Support (or greater) on all production AWS
       accounts
@@ -18,12 +25,6 @@ items:
       note: now it is sad
   - name: Scan your API for vulnerabilities
     uses: jitsecurity-controls/jit-plans/items/runtime/item-api-security.yml@latest
-  - name: WAFR-001. Conduct periodic architecture reviews (minimum once every year)
-    uses: >-
-      jitsecurity-controls/jit-plans/items/architecture_review/item-arch-review.yml@latest
-    input:
-      note: jhjhjh
-      status: passed
   - name: >-
       WAFR-002. Review the AWS Shared Responsibility Models for Security and
       Resiliency
