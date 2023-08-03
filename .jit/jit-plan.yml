@@ -112,6 +112,13 @@ items:
       note: |-
         <br/>
         It's dificult
+  - name: |
+      WAFR-001. Conduct periodic architecture reviews (minimum once every year)
+    uses: >-
+      jitsecurity-controls/jit-plans/items/architecture_review/item-arch-review.yml@latest
+    input:
+      status: passed
+      note: '*warmup'
 override:
   workflows:
     runtime-misconfiguration-detection:
