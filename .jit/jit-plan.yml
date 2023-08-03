@@ -8,12 +8,13 @@ references:
   - https://www.jit.io
 tags: []
 items:
-  - name: ACOM-001. Configure AWS account contacts
+  - name: |
+      ACOM-001. Configure AWS account contacts
     uses: >-
       jitsecurity-controls/jit-plans/items/communication_with_aws/item-account-communication.yml@latest
     input:
-      note: yes2^2^2==4
-      status: n/a
+      status: failed
+      note: 'yes'
   - name: ACOM-002. Set account contact information
     uses: >-
       jitsecurity-controls/jit-plans/items/communication_with_aws/item-account-contacts-config.yml@latest
@@ -26,8 +27,18 @@ items:
     uses: >-
       jitsecurity-controls/jit-plans/items/architecture_review/item-arch-review.yml@latest
     input:
-      note: Its ok now, we do it twice a year
       status: passed
+      note: Its ok now, we do it twice a year
+    slug: item-arch-review
+    layer: architecture_review
+    details: null
+    is_active: true
+    created_at: '2023-08-03T12:36:43.181276'
+    updated_at: '2023-08-03T12:36:43.181276'
+    aggregated_status: success
+    aggregated_status_timestamp: '2023-08-03T12:36:42.481510'
+    status: pending
+    conclusion: null
   - name: >-
       WAFR-002. Review the AWS Shared Responsibility Models for Security and
       Resiliency
@@ -41,9 +52,21 @@ items:
       hard-coded
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-aws-ftr-secret-detection.yml@latest
-  - name: CTL-003. Protect log storage from unintended access
+  - name: |
+      CTL-003. Protect log storage from unintended access
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-access-protection.yml@latest
+    slug: item-cloudtrail-access-protection
+    layer: aws_cloudtrail
+    input: null
+    details: null
+    is_active: true
+    created_at: '2023-07-25T11:40:13.233780'
+    updated_at: '2023-07-25T11:40:13.233780'
+    aggregated_status: failure
+    aggregated_status_timestamp: '2023-08-03T12:32:04.844467'
+    status: pending
+    conclusion: null
   - name: CTL-001. Configure CloudTrail in all AWS Accounts and in all Regions
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-config.yml@latest
@@ -86,8 +109,18 @@ items:
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-ir.yml@latest
     input:
-      note: wow wow wow
       status: passed
+      note: wow wow wow
+    slug: item-root-account-ir
+    layer: aws_root_account
+    details: null
+    is_active: true
+    created_at: '2023-08-03T12:36:43.181582'
+    updated_at: '2023-08-03T12:36:43.181582'
+    aggregated_status: success
+    aggregated_status_timestamp: '2023-08-03T12:36:42.481510'
+    status: pending
+    conclusion: null
   - name: ARC-004. Remove access keys for the root user
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-keys.yml@latest
