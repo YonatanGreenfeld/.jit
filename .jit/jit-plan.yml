@@ -102,6 +102,16 @@ items:
   - name: Scan your web application for vulnerabilities
     uses: >-
       jitsecurity-controls/jit-plans/items/runtime/item-web-app-scanner.yml@latest
+  - name: >
+      SUP-001. Enable AWS Business Support (or greater) on all production AWS
+      accounts
+    uses: >-
+      jitsecurity-controls/jit-plans/items/support_level/item-support-business.yml@latest
+    input:
+      status: passed
+      note: |-
+        <br/>
+        It's dificult
 override:
   workflows:
     runtime-misconfiguration-detection:
