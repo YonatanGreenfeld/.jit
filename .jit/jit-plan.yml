@@ -70,6 +70,16 @@ items:
     input:
       status: n/a
       note: HOST-001
+    slug: item-partner-hosting-model
+    layer: partner_hosted
+    details: null
+    is_active: true
+    created_at: '2023-08-03T12:58:32.741064'
+    updated_at: '2023-08-03T12:58:32.741064'
+    aggregated_status: success
+    aggregated_status_timestamp: '2023-08-03T12:58:32.740263'
+    status: pending
+    conclusion: null
   - name: ARC-001. Use root user only by exception
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-exception.yml@latest
@@ -107,14 +117,6 @@ items:
       jitsecurity-controls/jit-plans/items/amazon_s3_bucket_access/item-s3-review-access.yml@latest
   - name: Scan code for hard-coded secrets
     uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
-  - name: >-
-      SUP-001. Enable AWS Business Support (or greater) on all production AWS
-      accounts
-    uses: >-
-      jitsecurity-controls/jit-plans/items/support_level/item-support-business.yml@latest
-    input:
-      note: now it is sad
-      status: passed
   - name: Scan your web application for vulnerabilities
     uses: >-
       jitsecurity-controls/jit-plans/items/runtime/item-web-app-scanner.yml@latest
