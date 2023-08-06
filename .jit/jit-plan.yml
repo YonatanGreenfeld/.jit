@@ -57,6 +57,9 @@ items:
   - name: IAM-002. Rotate credentials regularly
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-creds-rotation.yml@latest
+  - name: IAM-006. Grant least privilege access
+    uses: >-
+      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-least-privilege.yml@latest
   - name: >-
       IAM-001. Enable multi-factor authentication for all Human Identities with
       AWS access
@@ -111,6 +114,14 @@ items:
   - name: Scan code for hard-coded secrets
     uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
   - name: >-
+      SDAT-003. Only use protocols with encryption when transmitting sensitive
+      data outside of your VPC
+    uses: >-
+      jitsecurity-controls/jit-plans/items/sensitive_data/item-sensitive-data-encrypt-out-vpc.yml@latest
+  - name: SDAT-001. Identify sensitive data
+    uses: >-
+      jitsecurity-controls/jit-plans/items/sensitive_data/item-sensitive-data-identify.yml@latest
+  - name: >-
       SUP-001. Enable AWS Business Support (or greater) on all production AWS
       accounts
     uses: >-
@@ -118,19 +129,6 @@ items:
   - name: Scan your web application for vulnerabilities
     uses: >-
       jitsecurity-controls/jit-plans/items/runtime/item-web-app-scanner.yml@latest
-  - name: |
-      IAM-006. Grant least privilege access
-    uses: >-
-      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-least-privilege.yml@latest
-  - name: >
-      SDAT-003. Only use protocols with encryption when transmitting sensitive
-      data outside of your VPC
-    uses: >-
-      jitsecurity-controls/jit-plans/items/sensitive_data/item-sensitive-data-encrypt-out-vpc.yml@latest
-  - name: |
-      SDAT-001. Identify sensitive data
-    uses: >-
-      jitsecurity-controls/jit-plans/items/sensitive_data/item-sensitive-data-identify.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
