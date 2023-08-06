@@ -77,6 +77,9 @@ items:
       AWS access
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-mfa.yml@latest
+  - name: IAM-004. Create individual identities (no shared credentials)
+    uses: >-
+      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-no-shared-creds.yml@latest
   - name: HOST-001. Confirm your hosting model
     uses: >-
       jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
@@ -134,9 +137,9 @@ items:
     uses: >-
       jitsecurity-controls/jit-plans/items/runtime/item-web-app-scanner.yml@latest
   - name: |
-      IAM-004. Create individual identities (no shared credentials)
+      IAM-002. Rotate credentials regularly
     uses: >-
-      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-no-shared-creds.yml@latest
+      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-creds-rotation.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
