@@ -20,11 +20,6 @@ items:
     uses: >-
       jitsecurity-controls/jit-plans/items/architecture_review/item-arch-review.yml@latest
   - name: >-
-      WAFR-002. Review the AWS Shared Responsibility Models for Security and
-      Resiliency
-    uses: >-
-      jitsecurity-controls/jit-plans/items/architecture_review/item-arch-shared-responsibility.yml@latest
-  - name: >-
       IAM-009. Ensure all credentials used by your applications are not
       hard-coded
     uses: >-
