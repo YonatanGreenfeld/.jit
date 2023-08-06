@@ -20,6 +20,14 @@ items:
     uses: >-
       jitsecurity-controls/jit-plans/items/architecture_review/item-arch-review.yml@latest
   - name: >-
+      WAFR-002. Review the AWS Shared Responsibility Models for Security and
+      Resiliency
+    uses: >-
+      jitsecurity-controls/jit-plans/items/architecture_review/item-arch-shared-responsibility.yml@latest
+    input:
+      note: Here we go!
+      status: passed
+  - name: >-
       IAM-009. Ensure all credentials used by your applications are not
       hard-coded
     uses: >-
@@ -134,13 +142,13 @@ items:
     uses: >-
       jitsecurity-controls/jit-plans/items/runtime/item-web-app-scanner.yml@latest
   - name: >
-      WAFR-002. Review the AWS Shared Responsibility Models for Security and
-      Resiliency
+      CAA-007. Provide guidance for creating cross-account roles with the
+      minimum required privileges
     uses: >-
-      jitsecurity-controls/jit-plans/items/architecture_review/item-arch-shared-responsibility.yml@latest
+      jitsecurity-controls/jit-plans/items/cross_account_access/item-cross-account-automation.yml@latest
     input:
       status: passed
-      note: Here we go!
+      note: Yes pls
 override:
   workflows:
     runtime-misconfiguration-detection:
