@@ -11,31 +11,19 @@ items:
   - name: ACOM-001. Configure AWS account contacts
     uses: >-
       jitsecurity-controls/jit-plans/items/communication_with_aws/item-account-communication.yml@latest
-    input:
-      note: failed ACOM-001
-      status: failed
   - name: ACOM-002. Set account contact information
     uses: >-
       jitsecurity-controls/jit-plans/items/communication_with_aws/item-account-contacts-config.yml@latest
-    input:
-      note: yes3
-      status: passed
   - name: Scan your API for vulnerabilities
     uses: jitsecurity-controls/jit-plans/items/runtime/item-api-security.yml@latest
   - name: WAFR-001. Conduct periodic architecture reviews (minimum once every year)
     uses: >-
       jitsecurity-controls/jit-plans/items/architecture_review/item-arch-review.yml@latest
-    input:
-      note: '*warmup'
-      status: passed
   - name: >-
       WAFR-002. Review the AWS Shared Responsibility Models for Security and
       Resiliency
     uses: >-
       jitsecurity-controls/jit-plans/items/architecture_review/item-arch-shared-responsibility.yml@latest
-    input:
-      note: value
-      status: failed
   - name: >-
       IAM-009. Ensure all credentials used by your applications are not
       hard-coded
@@ -55,9 +43,6 @@ items:
       access
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-separate-account.yml@latest
-    input:
-      note: yes4
-      status: passed
   - name: Scan your code for vulnerabilities (SAST)
     uses: >-
       jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
@@ -83,20 +68,17 @@ items:
   - name: IAM-004. Create individual identities (no shared credentials)
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-no-shared-creds.yml@latest
+  - name: IAM-003. Use strong password policy
+    uses: >-
+      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-no-strong-policy.yml@latest
   - name: >-
       IAM-005. Use IAM roles and its temporary security credentials to provide
       access to third parties
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-third-party.yml@latest
-    input:
-      note: Good job 👍
-      status: passed
   - name: HOST-001. Confirm your hosting model
     uses: >-
       jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
-    input:
-      note: '""'
-      status: n/a
   - name: ARC-001. Use root user only by exception
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-exception.yml@latest
@@ -105,9 +87,6 @@ items:
       credential misuse
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-ir.yml@latest
-    input:
-      note: foobar
-      status: failed
   - name: ARC-004. Remove access keys for the root user
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-keys.yml@latest
@@ -139,18 +118,13 @@ items:
       accounts
     uses: >-
       jitsecurity-controls/jit-plans/items/support_level/item-support-business.yml@latest
-    input:
-      note: |-
-        <br/>
-        It's dificult
-      status: passed
   - name: Scan your web application for vulnerabilities
     uses: >-
       jitsecurity-controls/jit-plans/items/runtime/item-web-app-scanner.yml@latest
   - name: |
-      IAM-003. Use strong password policy
+      IAM-006. Grant least privilege access
     uses: >-
-      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-no-strong-policy.yml@latest
+      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-least-privilege.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
