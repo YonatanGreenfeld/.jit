@@ -1,1 +1,3 @@
-
+item-iam-no-shared-creds:
+  note: Great!!
+  status: passed
