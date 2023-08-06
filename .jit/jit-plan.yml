@@ -125,6 +125,11 @@ items:
       IAM-006. Grant least privilege access
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-least-privilege.yml@latest
+  - name: >
+      SDAT-003. Only use protocols with encryption when transmitting sensitive
+      data outside of your VPC
+    uses: >-
+      jitsecurity-controls/jit-plans/items/sensitive_data/item-sensitive-data-encrypt-out-vpc.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
