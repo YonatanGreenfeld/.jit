@@ -90,6 +90,12 @@ items:
       access to third parties
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-third-party.yml@latest
+  - name: HOST-001. Confirm your hosting model
+    uses: >-
+      jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
+    input:
+      note: OK new attempt
+      status: passed
   - name: ARC-001. Use root user only by exception
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-exception.yml@latest
@@ -122,8 +128,6 @@ items:
       levels
     uses: >-
       jitsecurity-controls/jit-plans/items/amazon_s3_bucket_access/item-s3-review-access.yml@latest
-  - name: Scan code for hard-coded secrets
-    uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
   - name: >-
       SDAT-003. Only use protocols with encryption when transmitting sensitive
       data outside of your VPC
@@ -143,13 +147,6 @@ items:
   - name: Scan your web application for vulnerabilities
     uses: >-
       jitsecurity-controls/jit-plans/items/runtime/item-web-app-scanner.yml@latest
-  - name: |
-      HOST-001. Confirm your hosting model
-    uses: >-
-      jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
-    input:
-      status: passed
-      note: OK new attempt
 override:
   workflows:
     runtime-misconfiguration-detection:
