@@ -72,6 +72,9 @@ items:
   - name: Scan your infrastructure-as-code (IaC) for misconfigurations
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-iac-misconfiguration-detection.yml@latest
+  - name: IAM-002. Rotate credentials regularly
+    uses: >-
+      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-creds-rotation.yml@latest
   - name: >-
       IAM-001. Enable multi-factor authentication for all Human Identities with
       AWS access
@@ -80,6 +83,14 @@ items:
   - name: IAM-004. Create individual identities (no shared credentials)
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-no-shared-creds.yml@latest
+  - name: >-
+      IAM-005. Use IAM roles and its temporary security credentials to provide
+      access to third parties
+    uses: >-
+      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-third-party.yml@latest
+    input:
+      note: Good job 👍
+      status: passed
   - name: HOST-001. Confirm your hosting model
     uses: >-
       jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
@@ -137,17 +148,9 @@ items:
     uses: >-
       jitsecurity-controls/jit-plans/items/runtime/item-web-app-scanner.yml@latest
   - name: |
-      IAM-002. Rotate credentials regularly
+      IAM-003. Use strong password policy
     uses: >-
-      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-creds-rotation.yml@latest
-  - name: >
-      IAM-005. Use IAM roles and its temporary security credentials to provide
-      access to third parties
-    uses: >-
-      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-third-party.yml@latest
-    input:
-      status: passed
-      note: Good job 👍
+      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-no-strong-policy.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
