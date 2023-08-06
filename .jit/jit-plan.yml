@@ -60,8 +60,6 @@ items:
     input:
       note: Yes pls
       status: passed
-  - name: Scan your code dependencies for vulnerabilities (SCA)
-    uses: jitsecurity-controls/jit-plans/items/code/item-dependency-check.yml@latest
   - name: Scan Kubernetes configuration files
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-iac-kubernetes.yml@latest
