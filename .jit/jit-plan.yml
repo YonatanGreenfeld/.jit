@@ -22,6 +22,20 @@ items:
       status: passed
   - name: Scan your API for vulnerabilities
     uses: jitsecurity-controls/jit-plans/items/runtime/item-api-security.yml@latest
+  - name: WAFR-001. Conduct periodic architecture reviews (minimum once every year)
+    uses: >-
+      jitsecurity-controls/jit-plans/items/architecture_review/item-arch-review.yml@latest
+    input:
+      note: '*warmup'
+      status: passed
+  - name: >-
+      WAFR-002. Review the AWS Shared Responsibility Models for Security and
+      Resiliency
+    uses: >-
+      jitsecurity-controls/jit-plans/items/architecture_review/item-arch-shared-responsibility.yml@latest
+    input:
+      note: value
+      status: failed
   - name: >-
       IAM-009. Ensure all credentials used by your applications are not
       hard-coded
@@ -63,16 +77,23 @@ items:
       AWS access
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-mfa.yml@latest
-  - name: |
-      HOST-001. Confirm your hosting model
+  - name: HOST-001. Confirm your hosting model
     uses: >-
       jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
     input:
-      status: n/a
       note: '""'
+      status: n/a
   - name: ARC-001. Use root user only by exception
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-exception.yml@latest
+  - name: >-
+      ARC-005. Create an incident response (IR) runbook for root account
+      credential misuse
+    uses: >-
+      jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-ir.yml@latest
+    input:
+      note: foobar
+      status: failed
   - name: ARC-004. Remove access keys for the root user
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-keys.yml@latest
@@ -99,42 +120,23 @@ items:
       jitsecurity-controls/jit-plans/items/amazon_s3_bucket_access/item-s3-review-access.yml@latest
   - name: Scan code for hard-coded secrets
     uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
-  - name: Scan your web application for vulnerabilities
-    uses: >-
-      jitsecurity-controls/jit-plans/items/runtime/item-web-app-scanner.yml@latest
-  - name: >
+  - name: >-
       SUP-001. Enable AWS Business Support (or greater) on all production AWS
       accounts
     uses: >-
       jitsecurity-controls/jit-plans/items/support_level/item-support-business.yml@latest
     input:
-      status: passed
       note: |-
         <br/>
         It's dificult
-  - name: |
-      WAFR-001. Conduct periodic architecture reviews (minimum once every year)
-    uses: >-
-      jitsecurity-controls/jit-plans/items/architecture_review/item-arch-review.yml@latest
-    input:
       status: passed
-      note: '*warmup'
-  - name: >
-      WAFR-002. Review the AWS Shared Responsibility Models for Security and
-      Resiliency
+  - name: Scan your web application for vulnerabilities
     uses: >-
-      jitsecurity-controls/jit-plans/items/architecture_review/item-arch-shared-responsibility.yml@latest
-    input:
-      status: failed
-      note: value
-  - name: >
-      ARC-005. Create an incident response (IR) runbook for root account
-      credential misuse
+      jitsecurity-controls/jit-plans/items/runtime/item-web-app-scanner.yml@latest
+  - name: |
+      IAM-004. Create individual identities (no shared credentials)
     uses: >-
-      jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-ir.yml@latest
-    input:
-      status: failed
-      note: foobar
+      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-no-shared-creds.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
