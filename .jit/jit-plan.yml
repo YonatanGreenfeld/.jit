@@ -16,9 +16,6 @@ items:
       jitsecurity-controls/jit-plans/items/communication_with_aws/item-account-contacts-config.yml@latest
   - name: Scan your API for vulnerabilities
     uses: jitsecurity-controls/jit-plans/items/runtime/item-api-security.yml@latest
-  - name: WAFR-001. Conduct periodic architecture reviews (minimum once every year)
-    uses: >-
-      jitsecurity-controls/jit-plans/items/architecture_review/item-arch-review.yml@latest
   - name: >-
       WAFR-002. Review the AWS Shared Responsibility Models for Security and
       Resiliency
