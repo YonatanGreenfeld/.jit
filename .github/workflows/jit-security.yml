@@ -12,12 +12,12 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: trivy
-      uses: jitsecurity-controls/jit-github-action@v2.6
+      uses: jitsecurity-controls/jit-github-action@v3.0.1
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
         
-        security_control: registry.jit.io/control-trivy-alpine:latest
+        security_control: registry.jit.io/control-trivy-alpine:main
         security_control_args: --quiet config --severity HIGH,CRITICAL -f json --ignorefile /opt/.trivyignore ${WORK_DIR:-.}
         
         dispatch_type: workflow
@@ -30,7 +30,7 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: enrichment
-      uses: jitsecurity-controls/jit-github-action@v2.6
+      uses: jitsecurity-controls/jit-github-action@v3.0.1
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -48,12 +48,12 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: kics
-      uses: jitsecurity-controls/jit-github-action@v2.6
+      uses: jitsecurity-controls/jit-github-action@v3.0.1
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
         
-        security_control: registry.jit.io/control-kics-alpine:latest
+        security_control: registry.jit.io/control-kics-alpine:main
         security_control_args: scan -t CloudFormation -p ${WORK_DIR:-.} -o $REPORT_FILE -f json --config /cloudformation-config.yaml --disable-secrets
         security_control_output_file: /code/jit-report/results.json
         dispatch_type: workflow
@@ -66,12 +66,12 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: kubescape
-      uses: jitsecurity-controls/jit-github-action@v2.6
+      uses: jitsecurity-controls/jit-github-action@v3.0.1
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
         
-        security_control: registry.jit.io/control-kubescape-slim:latest
+        security_control: registry.jit.io/control-kubescape-slim:main
         security_control_args: scan -v --format json --format-version v2 --output raw-kubescape-results.json .
         security_control_output_file: /code/results.json
         dispatch_type: workflow
@@ -84,12 +84,12 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: kics
-      uses: jitsecurity-controls/jit-github-action@v2.6
+      uses: jitsecurity-controls/jit-github-action@v3.0.1
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
         
-        security_control: registry.jit.io/control-kics-alpine:latest
+        security_control: registry.jit.io/control-kics-alpine:main
         security_control_args: scan -t Pulumi -p ${WORK_DIR:-.} -o $REPORT_FILE -f json --config /pulumi-config.yaml --disable-secrets
         security_control_output_file: /code/jit-report/results.json
         dispatch_type: workflow
@@ -102,12 +102,12 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: kics
-      uses: jitsecurity-controls/jit-github-action@v2.6
+      uses: jitsecurity-controls/jit-github-action@v3.0.1
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
         
-        security_control: registry.jit.io/control-kics-alpine:latest
+        security_control: registry.jit.io/control-kics-alpine:main
         security_control_args: scan -t Terraform -p ${WORK_DIR:-.} -o $REPORT_FILE -f json --config /terraform-config.yaml --disable-secrets
         security_control_output_file: /code/jit-report/results.json
         dispatch_type: workflow
@@ -120,7 +120,7 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: remediation-pr
-      uses: jitsecurity-controls/jit-github-action@v2.6
+      uses: jitsecurity-controls/jit-github-action@v3.0.1
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
@@ -138,12 +138,12 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: gitleaks
-      uses: jitsecurity-controls/jit-github-action@v2.6
+      uses: jitsecurity-controls/jit-github-action@v3.0.1
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
         
-        security_control: registry.jit.io/control-gitleaks-alpine:latest
+        security_control: registry.jit.io/control-gitleaks-alpine:main
         security_control_args: detect --config $GITLEAKS_CONFIG_FILE_PATH --source ${WORK_DIR:-.} -v --report-format json --report-path $REPORT_FILE --redact --no-git --exit-code 0
         security_control_output_file: /tmp/report.json
         dispatch_type: workflow
@@ -156,12 +156,12 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: semgrep
-      uses: jitsecurity-controls/jit-github-action@v2.6
+      uses: jitsecurity-controls/jit-github-action@v3.0.1
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
         
-        security_control: registry.jit.io/control-semgrep-alpine:latest
+        security_control: registry.jit.io/control-semgrep-alpine:main
         security_control_args: --json --config=/semgrep-csharp-config.yml --metrics=off --severity=ERROR ${WORK_DIR:-.}
         
         dispatch_type: workflow
@@ -174,12 +174,12 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: gosec
-      uses: jitsecurity-controls/jit-github-action@v2.6
+      uses: jitsecurity-controls/jit-github-action@v3.0.1
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
         
-        security_control: registry.jit.io/control-gosec-alpine:latest
+        security_control: registry.jit.io/control-gosec-alpine:main
         security_control_args: -fmt=json -severity=high ${WORK_DIR:-.}/...
         
         dispatch_type: workflow
@@ -192,12 +192,12 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: semgrep
-      uses: jitsecurity-controls/jit-github-action@v2.6
+      uses: jitsecurity-controls/jit-github-action@v3.0.1
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
         
-        security_control: registry.jit.io/control-semgrep-alpine:latest
+        security_control: registry.jit.io/control-semgrep-alpine:main
         security_control_args: --json --config=/semgrep-java-config.yml --metrics=off --severity=ERROR ${WORK_DIR:-.}
         
         dispatch_type: workflow
@@ -210,12 +210,12 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: semgrep
-      uses: jitsecurity-controls/jit-github-action@v2.6
+      uses: jitsecurity-controls/jit-github-action@v3.0.1
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
         
-        security_control: registry.jit.io/control-semgrep-alpine:latest
+        security_control: registry.jit.io/control-semgrep-alpine:main
         security_control_args: --json --config=/semgrep-ts-config.yml --metrics=off --severity=ERROR ${WORK_DIR:-.}
         
         dispatch_type: workflow
@@ -228,12 +228,12 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: semgrep
-      uses: jitsecurity-controls/jit-github-action@v2.6
+      uses: jitsecurity-controls/jit-github-action@v3.0.1
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
         
-        security_control: registry.jit.io/control-semgrep-alpine:latest
+        security_control: registry.jit.io/control-semgrep-alpine:main
         security_control_args: --json --config=/semgrep-kotlin-config.yml --metrics=off --severity=ERROR ${WORK_DIR:-.}
         
         dispatch_type: workflow
@@ -246,12 +246,12 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: semgrep
-      uses: jitsecurity-controls/jit-github-action@v2.6
+      uses: jitsecurity-controls/jit-github-action@v3.0.1
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
         
-        security_control: registry.jit.io/control-semgrep-alpine:latest
+        security_control: registry.jit.io/control-semgrep-alpine:main
         security_control_args: --json --config=/semgrep-php-config.yml --metrics=off --severity=ERROR ${WORK_DIR:-.}
         
         dispatch_type: workflow
@@ -264,12 +264,12 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: semgrep
-      uses: jitsecurity-controls/jit-github-action@v2.6
+      uses: jitsecurity-controls/jit-github-action@v3.0.1
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
         
-        security_control: registry.jit.io/control-semgrep-alpine:latest
+        security_control: registry.jit.io/control-semgrep-alpine:main
         security_control_args: --json --config=/semgrep-python-config.yml --metrics=off --severity=ERROR ${WORK_DIR:-.}
         
         dispatch_type: workflow
@@ -282,12 +282,12 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: semgrep
-      uses: jitsecurity-controls/jit-github-action@v2.6
+      uses: jitsecurity-controls/jit-github-action@v3.0.1
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
         
-        security_control: registry.jit.io/control-semgrep-alpine:latest
+        security_control: registry.jit.io/control-semgrep-alpine:main
         security_control_args: --json --config=/semgrep-rust-config.yml --metrics=off --severity=ERROR ${WORK_DIR:-.}
         
         dispatch_type: workflow
@@ -300,12 +300,12 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: semgrep
-      uses: jitsecurity-controls/jit-github-action@v2.6
+      uses: jitsecurity-controls/jit-github-action@v3.0.1
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
         
-        security_control: registry.jit.io/control-semgrep-alpine:latest
+        security_control: registry.jit.io/control-semgrep-alpine:main
         security_control_args: --json --config=/semgrep-scala-config.yml --metrics=off --severity=ERROR ${WORK_DIR:-.}
         
         dispatch_type: workflow
@@ -318,12 +318,12 @@ jobs:
     timeout-minutes: 20
     steps:
     - name: semgrep
-      uses: jitsecurity-controls/jit-github-action@v2.6
+      uses: jitsecurity-controls/jit-github-action@v3.0.1
       with:
         docker_user: jit-bot
         docker_password: ${{fromJSON(github.event.inputs.client_payload).payload.container_registry_token}}
         
-        security_control: registry.jit.io/control-semgrep-alpine:latest
+        security_control: registry.jit.io/control-semgrep-alpine:main
         security_control_args: --json --config=/semgrep-swift-config.yml --metrics=off --severity=ERROR ${WORK_DIR:-.}
         
         dispatch_type: workflow
