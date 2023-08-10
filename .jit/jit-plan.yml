@@ -1,5 +1,6 @@
 name: My plan
 level: beginner
+update_id: ba82f7eb-09b9-48d5-8811-21f549f8d0b4
 author: Jit
 version: 0.1
 owners:
@@ -9,168 +10,129 @@ references:
 tags: []
 items:
   - name: ACOM-001. Configure AWS account contacts
-    uses: >-
-      jitsecurity-controls/jit-plans/items/communication_with_aws/item-account-communication.yml@latest
+    uses: jitsecurity-controls/jit-plans/items/communication_with_aws/item-account-communication.yml@latest
   - name: ACOM-002. Set account contact information
-    uses: >-
-      jitsecurity-controls/jit-plans/items/communication_with_aws/item-account-contacts-config.yml@latest
+    uses: jitsecurity-controls/jit-plans/items/communication_with_aws/item-account-contacts-config.yml@latest
   - name: Scan your API for vulnerabilities
     uses: jitsecurity-controls/jit-plans/items/runtime/item-api-security.yml@latest
   - name: WAFR-001. Conduct periodic architecture reviews (minimum once every year)
-    uses: >-
-      jitsecurity-controls/jit-plans/items/architecture_review/item-arch-review.yml@latest
-  - name: >-
-      WAFR-002. Review the AWS Shared Responsibility Models for Security and
-      Resiliency
-    uses: >-
-      jitsecurity-controls/jit-plans/items/architecture_review/item-arch-shared-responsibility.yml@latest
+    uses: jitsecurity-controls/jit-plans/items/architecture_review/item-arch-review.yml@latest
+  - name: WAFR-002. Review the AWS Shared Responsibility Models for Security and Resiliency
+
+    uses: jitsecurity-controls/jit-plans/items/architecture_review/item-arch-shared-responsibility.yml@latest
     input:
       note: Here we go!
       status: passed
-  - name: >-
-      IAM-009. Ensure all credentials used by your applications are not
-      hard-coded
-    uses: >-
-      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-aws-ftr-secret-detection.yml@latest
+  - name: IAM-009. Ensure all credentials used by your applications are not hard-coded
+
+    uses: jitsecurity-controls/jit-plans/items/identity_and_access_management/item-aws-ftr-secret-detection.yml@latest
   - name: CTL-003. Protect log storage from unintended access
-    uses: >-
-      jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-access-protection.yml@latest
+
+    uses: jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-access-protection.yml@latest
   - name: CTL-001. Configure CloudTrail in all AWS Accounts and in all Regions
-    uses: >-
-      jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-config.yml@latest
+
+    uses: jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-config.yml@latest
   - name: CTL-004. Enable CloudTrail log file integrity validation
-    uses: >-
-      jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-integrity-validation.yml@latest
-  - name: >-
-      CTL-002. Store logs in in a separate administrative domain with limited
-      access
-    uses: >-
-      jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-separate-account.yml@latest
+
+    uses: jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-integrity-validation.yml@latest
+  - name: CTL-002. Store logs in in a separate administrative domain with limited access
+    uses: jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-separate-account.yml@latest
   - name: Scan your code for vulnerabilities (SAST)
-    uses: >-
-      jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
+    uses: jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
   - name: Scan your Dockerfiles for vulnerabilities
-    uses: >-
-      jitsecurity-controls/jit-plans/items/infrastructure/item-container-scan.yml@latest
-  - name: >-
-      CAA-007. Provide guidance for creating cross-account roles with the
-      minimum required privileges
-    uses: >-
-      jitsecurity-controls/jit-plans/items/cross_account_access/item-cross-account-automation.yml@latest
+    uses: jitsecurity-controls/jit-plans/items/infrastructure/item-container-scan.yml@latest
+  - name: CAA-007. Provide guidance for creating cross-account roles with the minimum required privileges
+
+    uses: jitsecurity-controls/jit-plans/items/cross_account_access/item-cross-account-automation.yml@latest
     input:
       note: Yes pls
       status: passed
   - name: Scan Kubernetes configuration files
-    uses: >-
-      jitsecurity-controls/jit-plans/items/infrastructure/item-iac-kubernetes.yml@latest
+    uses: jitsecurity-controls/jit-plans/items/infrastructure/item-iac-kubernetes.yml@latest
   - name: Scan your infrastructure-as-code (IaC) for misconfigurations
-    uses: >-
-      jitsecurity-controls/jit-plans/items/infrastructure/item-iac-misconfiguration-detection.yml@latest
+    uses: jitsecurity-controls/jit-plans/items/infrastructure/item-iac-misconfiguration-detection.yml@latest
   - name: IAM-002. Rotate credentials regularly
-    uses: >-
-      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-creds-rotation.yml@latest
+
+    uses: jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-creds-rotation.yml@latest
   - name: IAM-006. Grant least privilege access
-    uses: >-
-      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-least-privilege.yml@latest
-  - name: >-
-      IAM-001. Enable multi-factor authentication for all Human Identities with
-      AWS access
-    uses: >-
-      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-mfa.yml@latest
+
+    uses: jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-least-privilege.yml@latest
+  - name: IAM-001. Enable multi-factor authentication for all Human Identities with AWS access
+
+    uses: jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-mfa.yml@latest
   - name: IAM-004. Create individual identities (no shared credentials)
-    uses: >-
-      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-no-shared-creds.yml@latest
+
+    uses: jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-no-shared-creds.yml@latest
   - name: IAM-003. Use strong password policy
-    uses: >-
-      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-no-strong-policy.yml@latest
-  - name: >-
-      IAM-005. Use IAM roles and its temporary security credentials to provide
-      access to third parties
-    uses: >-
-      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-third-party.yml@latest
+
+    uses: jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-no-strong-policy.yml@latest
+  - name: IAM-005. Use IAM roles and its temporary security credentials to provide access to third parties
+    uses: jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-third-party.yml@latest
   - name: HOST-001. Confirm your hosting model
-    uses: >-
-      jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
+
+    uses: jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
     input:
       note: OK new attempt
       status: failed
   - name: ARC-001. Use root user only by exception
-    uses: >-
-      jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-exception.yml@latest
-  - name: >-
-      ARC-005. Create an incident response (IR) runbook for root account
-      credential misuse
-    uses: >-
-      jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-ir.yml@latest
+
+    uses: jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-exception.yml@latest
+  - name: ARC-005. Create an incident response (IR) runbook for root account credential misuse
+    uses: jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-ir.yml@latest
   - name: ARC-004. Remove access keys for the root user
-    uses: >-
-      jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-keys.yml@latest
-  - name: >-
-      ARC-003. Enable multi-factor authentication (MFA) on the root user for all
-      AWS accounts
-    uses: >-
-      jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-mfa.yml@latest
+
+    uses: jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-keys.yml@latest
+  - name: ARC-003. Enable multi-factor authentication (MFA) on the root user for all AWS accounts
+
+    uses: jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-mfa.yml@latest
   - name: Scan infrastructure for runtime misconfigurations
-    uses: >-
-      jitsecurity-controls/jit-plans/items/infrastructure/item-runtime-misconfiguration-detection.yml@latest
-  - name: >-
-      S3-003. Implement monitoring and alerting to identify when S3 buckets
-      become public
-    uses: >-
-      jitsecurity-controls/jit-plans/items/amazon_s3_bucket_access/item-s3-monitoring-public.yml@latest
+    uses: jitsecurity-controls/jit-plans/items/infrastructure/item-runtime-misconfiguration-detection.yml@latest
+  - name: S3-003. Implement monitoring and alerting to identify when S3 buckets become public
+
+    uses: jitsecurity-controls/jit-plans/items/amazon_s3_bucket_access/item-s3-monitoring-public.yml@latest
   - name: S3-002. Restrict access to S3 buckets that should not have public access
-    uses: >-
-      jitsecurity-controls/jit-plans/items/amazon_s3_bucket_access/item-s3-no-public-access.yml@latest
-  - name: >-
-      S3-001. Review all Amazon S3 buckets to determine appropriate access
-      levels
-    uses: >-
-      jitsecurity-controls/jit-plans/items/amazon_s3_bucket_access/item-s3-review-access.yml@latest
-  - name: >-
-      SDAT-003. Only use protocols with encryption when transmitting sensitive
-      data outside of your VPC
-    uses: >-
-      jitsecurity-controls/jit-plans/items/sensitive_data/item-sensitive-data-encrypt-out-vpc.yml@latest
-  - name: SDAT-001. Identify sensitive data
-    uses: >-
-      jitsecurity-controls/jit-plans/items/sensitive_data/item-sensitive-data-identify.yml@latest
-  - name: >-
-      SUP-001. Enable AWS Business Support (or greater) on all production AWS
-      accounts
-    uses: >-
-      jitsecurity-controls/jit-plans/items/support_level/item-support-business.yml@latest
-    input:
-      note: ':('
-      status: passed
-  - name: Scan your web application for vulnerabilities
-    uses: >-
-      jitsecurity-controls/jit-plans/items/runtime/item-web-app-scanner.yml@latest
+
+    uses: jitsecurity-controls/jit-plans/items/amazon_s3_bucket_access/item-s3-no-public-access.yml@latest
+  - name: S3-001. Review all Amazon S3 buckets to determine appropriate access levels
+
+    uses: jitsecurity-controls/jit-plans/items/amazon_s3_bucket_access/item-s3-review-access.yml@latest
   - name: Scan code for hard-coded secrets
     uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
+  - name: SDAT-003. Only use protocols with encryption when transmitting sensitive data outside of your VPC
+
+    uses: jitsecurity-controls/jit-plans/items/sensitive_data/item-sensitive-data-encrypt-out-vpc.yml@latest
+  - name: SDAT-001. Identify sensitive data
+
+    uses: jitsecurity-controls/jit-plans/items/sensitive_data/item-sensitive-data-identify.yml@latest
+  - name: SUP-001. Enable AWS Business Support (or greater) on all production AWS accounts
+
+    uses: jitsecurity-controls/jit-plans/items/support_level/item-support-business.yml@latest
+    input:
+      note: :(
+      status: passed
+  - name: Scan your web application for vulnerabilities
+    uses: jitsecurity-controls/jit-plans/items/runtime/item-web-app-scanner.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
       jobs:
         runtime-misconfig-detection-aws:
           steps:
-            - name: Run Prowler For AWS
-              uses: >-
-                899025839375.dkr.ecr.us-east-1.amazonaws.com/prowler:not-hardened-sc-18604-prowler-add-support-of-specific-checks-fix
+          - name: Run Prowler For AWS
+            uses: 899025839375.dkr.ecr.us-east-1.amazonaws.com/prowler:not-hardened-sc-18604-prowler-add-support-of-specific-checks-fix
     runtime-misconfiguration-detection-cloudtrail-access-protection:
       jobs:
         runtime-misconfig-detection-aws:
           steps:
-            - name: Run Prowler For AWS
-              uses: >-
-                899025839375.dkr.ecr.us-east-1.amazonaws.com/prowler:not-hardened-sc-18604-prowler-add-support-of-specific-checks-fix
-              with:
-                args: '--excluded-checks s3_bucket_public_access'
+          - name: Run Prowler For AWS
+            uses: 899025839375.dkr.ecr.us-east-1.amazonaws.com/prowler:not-hardened-sc-18604-prowler-add-support-of-specific-checks-fix
+            with:
+              args: --excluded-checks s3_bucket_public_access
     runtime-misconfiguration-detection-cloudtrail-config:
       jobs:
         runtime-misconfig-detection-aws:
           steps:
-            - name: Run Prowler For AWS
-              uses: >-
-                899025839375.dkr.ecr.us-east-1.amazonaws.com/prowler:not-hardened-sc-18604-prowler-add-support-of-specific-checks-fix
-              with:
-                args: '--excluded-checks s3_bucket_public_access'
+          - name: Run Prowler For AWS
+            uses: 899025839375.dkr.ecr.us-east-1.amazonaws.com/prowler:not-hardened-sc-18604-prowler-add-support-of-specific-checks-fix
+            with:
+              args: --excluded-checks s3_bucket_public_access
