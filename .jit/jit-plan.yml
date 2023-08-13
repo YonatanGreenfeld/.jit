@@ -91,7 +91,8 @@ items:
     input:
       note: OK new attempt
       status: failed
-  - name: ARC-001. Use root user only by exception
+  - name: |
+      ARC-001. Use root user only by exception
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-exception.yml@latest
   - name: >-
@@ -102,7 +103,7 @@ items:
   - name: ARC-004. Remove access keys for the root user
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-keys.yml@latest
-  - name: >-
+  - name: >
       ARC-003. Enable multi-factor authentication (MFA) on the root user for all
       AWS accounts
     uses: >-
@@ -142,6 +143,8 @@ items:
   - name: Scan your web application for vulnerabilities
     uses: >-
       jitsecurity-controls/jit-plans/items/runtime/item-web-app-scanner.yml@latest
+  - name: Scan code for hard-coded secrets
+    uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
