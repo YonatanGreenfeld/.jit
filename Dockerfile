@@ -1,3 +1,3 @@
 FROM scratch
-USER root
+USER non-root
 RUN echo "hello world"
