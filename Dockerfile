@@ -1,3 +1,3 @@
 FROM scratch
-USER root
+USER root  # This is an error
 RUN echo "hello world"
