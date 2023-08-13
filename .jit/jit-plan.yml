@@ -72,7 +72,7 @@ items:
   - name: IAM-006. Grant least privilege access
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-least-privilege.yml@latest
-  - name: >-
+  - name: >
       IAM-001. Enable multi-factor authentication for all Human Identities with
       AWS access
     uses: >-
@@ -145,8 +145,6 @@ items:
   - name: Scan your web application for vulnerabilities
     uses: >-
       jitsecurity-controls/jit-plans/items/runtime/item-web-app-scanner.yml@latest
-  - name: Scan code for hard-coded secrets
-    uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
