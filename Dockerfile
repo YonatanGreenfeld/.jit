@@ -1,4 +1,4 @@
 FROM scratch
-
-USER non-root
+USER root
+COPY . /opt
 RUN echo "hello world"

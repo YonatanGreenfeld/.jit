@@ -1,4 +1,17 @@
-shortcut:
- my-integration:
-  auth:
-   api-key: "blabla1"
+aws:
+- account_id: '859000334327'
+  regions:
+  - us-east-1
+  type: account
+jira:
+  my-jira:
+    auth:
+      api_token: ${{ jit_secrets.jira-api  }}
+      domain: eliya-test-99
+      email: eliya@jit.io
+    preferences:
+      fields:
+        customfield_10034:
+        - value: '1'
+      issue_type_id: 10002
+      project_id: 10001
