@@ -63,13 +63,16 @@ items:
   - name: Scan Kubernetes configuration files
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-iac-kubernetes.yml@latest
+  - name: Scan your infrastructure-as-code (IaC) for misconfigurations
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-iac-misconfiguration-detection.yml@latest
   - name: IAM-002. Rotate credentials regularly
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-creds-rotation.yml@latest
   - name: IAM-006. Grant least privilege access
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-least-privilege.yml@latest
-  - name: >
+  - name: >-
       IAM-001. Enable multi-factor authentication for all Human Identities with
       AWS access
     uses: >-
@@ -91,8 +94,7 @@ items:
     input:
       note: OK new attempt
       status: failed
-  - name: |
-      ARC-001. Use root user only by exception
+  - name: ARC-001. Use root user only by exception
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-exception.yml@latest
   - name: >-
@@ -103,14 +105,11 @@ items:
   - name: ARC-004. Remove access keys for the root user
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-keys.yml@latest
-  - name: >
+  - name: >-
       ARC-003. Enable multi-factor authentication (MFA) on the root user for all
       AWS accounts
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-mfa.yml@latest
-  - name: Scan infrastructure for runtime misconfigurations
-    uses: >-
-      jitsecurity-controls/jit-plans/items/infrastructure/item-runtime-misconfiguration-detection.yml@latest
   - name: >-
       S3-003. Implement monitoring and alerting to identify when S3 buckets
       become public
@@ -124,6 +123,8 @@ items:
       levels
     uses: >-
       jitsecurity-controls/jit-plans/items/amazon_s3_bucket_access/item-s3-review-access.yml@latest
+  - name: Scan code for hard-coded secrets
+    uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
   - name: >-
       SDAT-003. Only use protocols with encryption when transmitting sensitive
       data outside of your VPC
@@ -143,11 +144,6 @@ items:
   - name: Scan your web application for vulnerabilities
     uses: >-
       jitsecurity-controls/jit-plans/items/runtime/item-web-app-scanner.yml@latest
-  - name: Scan code for hard-coded secrets
-    uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
-  - name: Scan your infrastructure-as-code (IaC) for misconfigurations
-    uses: >-
-      jitsecurity-controls/jit-plans/items/infrastructure/item-iac-misconfiguration-detection.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
