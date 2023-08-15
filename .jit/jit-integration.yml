@@ -1,8 +1,3 @@
-aws:
-- account_id: '859000334327'
-  regions:
-  - us-east-2
-  type: account
 jira:
   my-jira:
     auth:
