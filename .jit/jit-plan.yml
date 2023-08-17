@@ -66,9 +66,6 @@ items:
   - name: IAM-004. Create individual identities (no shared credentials)
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-no-shared-creds.yml@latest
-  - name: IAM-003. Use strong password policy
-    uses: >-
-      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-no-strong-policy.yml@latest
   - name: >-
       IAM-005. Use IAM roles and its temporary security credentials to provide
       access to third parties
