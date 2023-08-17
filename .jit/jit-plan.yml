@@ -32,9 +32,6 @@ items:
       hard-coded
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-aws-ftr-secret-detection.yml@latest
-  - name: CTL-003. Protect log storage from unintended access
-    uses: >-
-      jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-access-protection.yml@latest
   - name: >-
       CTL-002. Store logs in in a separate administrative domain with limited
       access
