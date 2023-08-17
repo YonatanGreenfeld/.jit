@@ -94,9 +94,6 @@ items:
     input:
       note: OK new attempt
       status: failed
-  - name: ARC-001. Use root user only by exception
-    uses: >-
-      jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-exception.yml@latest
   - name: >-
       ARC-005. Create an incident response (IR) runbook for root account
       credential misuse
@@ -110,6 +107,9 @@ items:
       AWS accounts
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-mfa.yml@latest
+  - name: Scan infrastructure for runtime misconfigurations
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-runtime-misconfiguration-detection.yml@latest
   - name: >-
       S3-003. Implement monitoring and alerting to identify when S3 buckets
       become public
@@ -144,9 +144,6 @@ items:
   - name: Scan your web application for vulnerabilities
     uses: >-
       jitsecurity-controls/jit-plans/items/runtime/item-web-app-scanner.yml@latest
-  - name: Scan infrastructure for runtime misconfigurations
-    uses: >-
-      jitsecurity-controls/jit-plans/items/infrastructure/item-runtime-misconfiguration-detection.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
