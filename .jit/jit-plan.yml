@@ -63,11 +63,6 @@ items:
   - name: IAM-006. Grant least privilege access
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-least-privilege.yml@latest
-  - name: >-
-      IAM-001. Enable multi-factor authentication for all Human Identities with
-      AWS access
-    uses: >-
-      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-mfa.yml@latest
   - name: IAM-004. Create individual identities (no shared credentials)
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-no-shared-creds.yml@latest
