@@ -138,10 +138,6 @@ items:
       hard-coded
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-aws-ftr-secret-detection.yml@latest
-  - name: |
-      NETSEC-002. Restrict resources in public subnets
-    uses: >-
-      jitsecurity-controls/jit-plans/items/network_security/item-netsec-public-subnets.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
