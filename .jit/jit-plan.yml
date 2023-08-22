@@ -125,10 +125,6 @@ items:
       AWS access
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-mfa.yml@latest
-  - name: |
-      IAM-002. Rotate credentials regularly
-    uses: >-
-      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-creds-rotation.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
