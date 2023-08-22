@@ -148,10 +148,6 @@ items:
     uses: >-
       jitsecurity-controls/jit-plans/items/amazon_s3_bucket_access/item-s3-monitoring-public.yml@latest
   - name: |
-      SDAT-002. Encrypt all sensitive data at rest
-    uses: >-
-      jitsecurity-controls/jit-plans/items/sensitive_data/item-sensitive-data-encrypt-at-rest.yml@latest
-  - name: |
       S3-002. Restrict access to S3 buckets that should not have public access
     uses: >-
       jitsecurity-controls/jit-plans/items/amazon_s3_bucket_access/item-s3-no-public-access.yml@latest
