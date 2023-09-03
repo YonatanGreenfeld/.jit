@@ -7,29 +7,95 @@ owners:
 references:
   - https://www.jit.io
 tags: []
-items: []
-
+items:
+  - name: |
+      Use root user only by exception
+    uses: >-
+      jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-exception.yml@latest
+  - name: >
+      Enable multi-factor authentication (MFA) on the root user for all AWS
+      accounts
+    uses: >-
+      jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-mfa.yml@latest
+  - name: |
+      Remove access keys for the root user
+    uses: >-
+      jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-keys.yml@latest
+  - name: |
+      Configure CloudTrail in all AWS Accounts and in all Regions
+    uses: >-
+      jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-config.yml@latest
+  - name: |
+      Protect log storage from unintended access
+    uses: >-
+      jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-access-protection.yml@latest
+  - name: |
+      Enable CloudTrail log file integrity validation
+    uses: >-
+      jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-integrity-validation.yml@latest
+  - name: >
+      Enable multi-factor authentication for all Human Identities with AWS
+      access
+    uses: >-
+      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-mfa.yml@latest
+  - name: |
+      Rotate credentials regularly
+    uses: >-
+      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-creds-rotation.yml@latest
+  - name: |
+      Use strong password policy
+    uses: >-
+      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-no-strong-policy.yml@latest
+  - name: |
+      Ensure all credentials used by your applications are not hard-coded
+    uses: >-
+      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-aws-ftr-secret-detection.yml@latest
+  - name: |
+      Restrict resources in public subnets
+    uses: >-
+      jitsecurity-controls/jit-plans/items/network_security/item-netsec-public-subnets.yml@latest
+  - name: |
+      Restrict access to S3 buckets that should not have public access
+    uses: >-
+      jitsecurity-controls/jit-plans/items/amazon_s3_bucket_access/item-s3-no-public-access.yml@latest
+  - name: >
+      Implement monitoring and alerting to identify when S3 buckets become
+      public
+    uses: >-
+      jitsecurity-controls/jit-plans/items/amazon_s3_bucket_access/item-s3-monitoring-public.yml@latest
+  - name: |
+      Encrypt all sensitive data at rest
+    uses: >-
+      jitsecurity-controls/jit-plans/items/sensitive_data/item-sensitive-data-encrypt-at-rest.yml@latest
+  - name: >
+      Only use protocols with encryption when transmitting sensitive data
+      outside of your VPC
+    uses: >-
+      jitsecurity-controls/jit-plans/items/sensitive_data/item-sensitive-data-encrypt-out-vpc.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
       jobs:
         runtime-misconfig-detection-aws:
           steps:
-          - name: Run Prowler For AWS
-            uses: 899025839375.dkr.ecr.us-east-1.amazonaws.com/prowler:not-hardened-sc-18604-prowler-add-support-of-specific-checks-fix
+            - name: Run Prowler For AWS
+              uses: >-
+                899025839375.dkr.ecr.us-east-1.amazonaws.com/prowler:not-hardened-sc-18604-prowler-add-support-of-specific-checks-fix
     runtime-misconfiguration-detection-cloudtrail-access-protection:
       jobs:
         runtime-misconfig-detection-aws:
           steps:
-          - name: Run Prowler For AWS
-            uses: 899025839375.dkr.ecr.us-east-1.amazonaws.com/prowler:not-hardened-sc-18604-prowler-add-support-of-specific-checks-fix
-            with:
-              args: --excluded-checks s3_bucket_public_access
+            - name: Run Prowler For AWS
+              uses: >-
+                899025839375.dkr.ecr.us-east-1.amazonaws.com/prowler:not-hardened-sc-18604-prowler-add-support-of-specific-checks-fix
+              with:
+                args: '--excluded-checks s3_bucket_public_access'
     runtime-misconfiguration-detection-cloudtrail-config:
       jobs:
         runtime-misconfig-detection-aws:
           steps:
-          - name: Run Prowler For AWS
-            uses: 899025839375.dkr.ecr.us-east-1.amazonaws.com/prowler:not-hardened-sc-18604-prowler-add-support-of-specific-checks-fix
-            with:
-              args: --excluded-checks s3_bucket_public_access
+            - name: Run Prowler For AWS
+              uses: >-
+                899025839375.dkr.ecr.us-east-1.amazonaws.com/prowler:not-hardened-sc-18604-prowler-add-support-of-specific-checks-fix
+              with:
+                args: '--excluded-checks s3_bucket_public_access'
