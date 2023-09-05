@@ -61,9 +61,6 @@ items:
       outside of your VPC
     uses: >-
       jitsecurity-controls/jit-plans/items/sensitive_data/item-sensitive-data-encrypt-out-vpc.yml@latest
-  - name: Scan your infrastructure-as-code (IaC) for misconfigurations
-    uses: >-
-      jitsecurity-controls/jit-plans/items/infrastructure/item-iac-misconfiguration-detection.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
