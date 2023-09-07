@@ -51,9 +51,6 @@ items:
   - name: Use root user only by exception
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-exception.yml@latest
-  - name: Remove access keys for the root user
-    uses: >-
-      jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-keys.yml@latest
   - name: >-
       Enable multi-factor authentication (MFA) on the root user for all AWS
       accounts
@@ -77,13 +74,12 @@ items:
       outside of your VPC
     uses: >-
       jitsecurity-controls/jit-plans/items/sensitive_data/item-sensitive-data-encrypt-out-vpc.yml@latest
-  - name: |
-      Enable AWS Business Support (or greater) on all production AWS accounts
+  - name: Enable AWS Business Support (or greater) on all production AWS accounts
     uses: >-
       jitsecurity-controls/jit-plans/items/support_level/item-support-business.yml@latest
     input:
-      status: passed
       note: Blabla
+      status: passed
 override:
   workflows:
     runtime-misconfiguration-detection:
