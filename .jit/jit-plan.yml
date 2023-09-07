@@ -48,9 +48,6 @@ items:
     input:
       note: yis
       status: passed
-  - name: Use root user only by exception
-    uses: >-
-      jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-exception.yml@latest
   - name: >-
       Implement monitoring and alerting to identify when S3 buckets become
       public
