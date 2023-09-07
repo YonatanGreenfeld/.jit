@@ -45,9 +45,6 @@ items:
     input:
       note: yis
       status: passed
-  - name: Restrict access to S3 buckets that should not have public access
-    uses: >-
-      jitsecurity-controls/jit-plans/items/amazon_s3_bucket_access/item-s3-no-public-access.yml@latest
   - name: Scan code for hard-coded secrets
     uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
   - name: Encrypt all sensitive data at rest
