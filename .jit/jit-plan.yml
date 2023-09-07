@@ -17,6 +17,9 @@ items:
   - name: Configure CloudTrail in all AWS Accounts and in all Regions
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-config.yml@latest
+  - name: Enable CloudTrail log file integrity validation
+    uses: >-
+      jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-integrity-validation.yml@latest
   - name: Scan your code for vulnerabilities (SAST)
     uses: >-
       jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
@@ -75,9 +78,12 @@ items:
     uses: >-
       jitsecurity-controls/jit-plans/items/sensitive_data/item-sensitive-data-encrypt-out-vpc.yml@latest
   - name: |
-      Enable CloudTrail log file integrity validation
+      Enable AWS Business Support (or greater) on all production AWS accounts
     uses: >-
-      jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-integrity-validation.yml@latest
+      jitsecurity-controls/jit-plans/items/support_level/item-support-business.yml@latest
+    input:
+      status: passed
+      note: Blabla
 override:
   workflows:
     runtime-misconfiguration-detection:
