@@ -39,9 +39,6 @@ items:
   - name: Use strong password policy
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-no-strong-policy.yml@latest
-  - name: Restrict resources in public subnets
-    uses: >-
-      jitsecurity-controls/jit-plans/items/network_security/item-netsec-public-subnets.yml@latest
   - name: Confirm your hosting model
     uses: >-
       jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
