@@ -52,11 +52,6 @@ items:
     uses: >-
       jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-exception.yml@latest
   - name: >-
-      Enable multi-factor authentication (MFA) on the root user for all AWS
-      accounts
-    uses: >-
-      jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-mfa.yml@latest
-  - name: >-
       Implement monitoring and alerting to identify when S3 buckets become
       public
     uses: >-
