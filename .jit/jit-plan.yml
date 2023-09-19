@@ -1,6 +1,5 @@
 name: My plan
 level: beginner
-update_id: e268835c-10cc-49d9-a0aa-50f99f3882ef
 author: Jit
 version: 0.1
 owners:
@@ -10,36 +9,49 @@ references:
 tags: []
 items:
   - name: Scan your code for vulnerabilities (SAST)
-    uses: jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
+    uses: >-
+      jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
   - name: Scan your Dockerfiles for vulnerabilities
-    uses: jitsecurity-controls/jit-plans/items/infrastructure/item-container-scan.yml@latest
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-container-scan.yml@latest
   - name: Scan your code dependencies for vulnerabilities (SCA)
     uses: jitsecurity-controls/jit-plans/items/code/item-dependency-check.yml@latest
   - name: Scan your infrastructure-as-code (IaC) for misconfigurations
-    uses: jitsecurity-controls/jit-plans/items/infrastructure/item-iac-misconfiguration-detection.yml@latest
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-iac-misconfiguration-detection.yml@latest
   - name: Scan code for hard-coded secrets
     uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
+  - name: |
+      Confirm your hosting model
+    uses: >-
+      jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
+    input:
+      status: passed
+      note: bla
 override:
   workflows:
     runtime-misconfiguration-detection:
       jobs:
         runtime-misconfig-detection-aws:
           steps:
-          - name: Run Prowler For AWS
-            uses: 899025839375.dkr.ecr.us-east-1.amazonaws.com/prowler:not-hardened-sc-18604-prowler-add-support-of-specific-checks-fix
+            - name: Run Prowler For AWS
+              uses: >-
+                899025839375.dkr.ecr.us-east-1.amazonaws.com/prowler:not-hardened-sc-18604-prowler-add-support-of-specific-checks-fix
     runtime-misconfiguration-detection-cloudtrail-access-protection:
       jobs:
         runtime-misconfig-detection-aws:
           steps:
-          - name: Run Prowler For AWS
-            uses: 899025839375.dkr.ecr.us-east-1.amazonaws.com/prowler:not-hardened-sc-18604-prowler-add-support-of-specific-checks-fix
-            with:
-              args: --excluded-checks s3_bucket_public_access
+            - name: Run Prowler For AWS
+              uses: >-
+                899025839375.dkr.ecr.us-east-1.amazonaws.com/prowler:not-hardened-sc-18604-prowler-add-support-of-specific-checks-fix
+              with:
+                args: '--excluded-checks s3_bucket_public_access'
     runtime-misconfiguration-detection-cloudtrail-config:
       jobs:
         runtime-misconfig-detection-aws:
           steps:
-          - name: Run Prowler For AWS
-            uses: 899025839375.dkr.ecr.us-east-1.amazonaws.com/prowler:not-hardened-sc-18604-prowler-add-support-of-specific-checks-fix
-            with:
-              args: --excluded-checks s3_bucket_public_access
+            - name: Run Prowler For AWS
+              uses: >-
+                899025839375.dkr.ecr.us-east-1.amazonaws.com/prowler:not-hardened-sc-18604-prowler-add-support-of-specific-checks-fix
+              with:
+                args: '--excluded-checks s3_bucket_public_access'
