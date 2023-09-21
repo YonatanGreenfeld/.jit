@@ -30,6 +30,10 @@ items:
     input:
       note: FooBar
       status: passed
+  - name: |
+      Confirm your hosting model
+    uses: >-
+      jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
