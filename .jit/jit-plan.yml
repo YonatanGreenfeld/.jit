@@ -30,6 +30,13 @@ items:
   - name: Scan your code for vulnerabilities (SAST)
     uses: >-
       jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
+  - name: |
+      Enable AWS Business Support (or greater) on all production AWS accounts
+    uses: >-
+      jitsecurity-controls/jit-plans/items/support_level/item-support-business.yml@latest
+    input:
+      status: passed
+      note: FooBar
 override:
   workflows:
     runtime-misconfiguration-detection:
