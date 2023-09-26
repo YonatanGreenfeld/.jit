@@ -8,6 +8,9 @@ references:
   - https://www.jit.io
 tags: []
 items:
+  - name: Set account contact information
+    uses: >-
+      jitsecurity-controls/jit-plans/items/communication_with_aws/item-account-contacts-config.yml@latest
   - name: Conduct periodic architecture reviews (minimum once every year)
     uses: >-
       jitsecurity-controls/jit-plans/items/architecture_review/item-arch-review.yml@latest
@@ -20,6 +23,9 @@ items:
     input:
       note: asd
       status: passed
+  - name: Ensure all credentials used by your applications are not hard-coded
+    uses: >-
+      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-aws-ftr-secret-detection.yml@latest
   - name: Scan your code for vulnerabilities (SAST)
     uses: >-
       jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
@@ -55,13 +61,9 @@ items:
       note: FooBar
       status: passed
   - name: |
-      Set account contact information
+      Perform vulnerability management
     uses: >-
-      jitsecurity-controls/jit-plans/items/communication_with_aws/item-account-contacts-config.yml@latest
-  - name: |
-      Ensure all credentials used by your applications are not hard-coded
-    uses: >-
-      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-aws-ftr-secret-detection.yml@latest
+      jitsecurity-controls/jit-plans/items/operational_security/item-secops-vulnerabiliy-mgt.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
