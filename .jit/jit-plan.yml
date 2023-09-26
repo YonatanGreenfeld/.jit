@@ -54,19 +54,20 @@ items:
     input:
       note: as
       status: passed
-  - name: |
-      Perform vulnerability management
+  - name: Perform vulnerability management
     uses: >-
       jitsecurity-controls/jit-plans/items/operational_security/item-secops-vulnerabiliy-mgt.yml@latest
     input:
-      status: passed
       note: '123123'
+      status: passed
   - name: Enable AWS Business Support (or greater) on all production AWS accounts
     uses: >-
       jitsecurity-controls/jit-plans/items/support_level/item-support-business.yml@latest
     input:
       note: FooBar
       status: passed
+  - name: Scan code for hard-coded secrets
+    uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
