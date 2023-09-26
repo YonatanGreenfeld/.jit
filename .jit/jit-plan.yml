@@ -54,6 +54,10 @@ items:
     input:
       note: FooBar
       status: passed
+  - name: |
+      Set account contact information
+    uses: >-
+      jitsecurity-controls/jit-plans/items/communication_with_aws/item-account-contacts-config.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
