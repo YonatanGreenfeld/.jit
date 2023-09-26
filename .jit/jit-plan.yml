@@ -80,6 +80,9 @@ items:
     input:
       note: FooBar
       status: passed
+  - name: Verify that Github Branch Protection is properly configured
+    uses: >-
+      jitsecurity-controls/jit-plans/items/third_party_app/item-branch-protection-scm.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
