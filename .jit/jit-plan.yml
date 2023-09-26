@@ -54,10 +54,6 @@ items:
     input:
       note: as
       status: passed
-  - name: |
-      Perform vulnerability management
-    uses: >-
-      jitsecurity-controls/jit-plans/items/operational_security/item-secops-vulnerabiliy-mgt.yml@latest
   - name: Enable AWS Business Support (or greater) on all production AWS accounts
     uses: >-
       jitsecurity-controls/jit-plans/items/support_level/item-support-business.yml@latest
