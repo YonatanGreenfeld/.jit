@@ -57,7 +57,7 @@ items:
       jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-ir.yml@latest
     input:
       status: passed
-      note: asdasddsa
+      note: as
 override:
   workflows:
     runtime-misconfiguration-detection:
