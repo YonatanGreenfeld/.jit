@@ -32,6 +32,12 @@ items:
   - name: Ensure all credentials used by your applications are not hard-coded
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-aws-ftr-secret-detection.yml@latest
+  - name: Store logs in in a separate administrative domain with limited access
+    uses: >-
+      jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-separate-account.yml@latest
+    input:
+      note: yada
+      status: passed
   - name: Scan your code for vulnerabilities (SAST)
     uses: >-
       jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
@@ -74,13 +80,9 @@ items:
     input:
       note: FooBar
       status: passed
-  - name: |
-      Store logs in in a separate administrative domain with limited access
+  - name: Verify that Github Branch Protection is properly configured
     uses: >-
-      jitsecurity-controls/jit-plans/items/aws_cloudtrail/item-cloudtrail-separate-account.yml@latest
-    input:
-      status: passed
-      note: yada
+      jitsecurity-controls/jit-plans/items/third_party_app/item-branch-protection-scm.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
