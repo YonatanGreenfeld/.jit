@@ -8,6 +8,18 @@ references:
   - https://www.jit.io
 tags: []
 items:
+  - name: Conduct periodic architecture reviews (minimum once every year)
+    uses: >-
+      jitsecurity-controls/jit-plans/items/architecture_review/item-arch-review.yml@latest
+    input:
+      note: foobar
+      status: passed
+  - name: Review the AWS Shared Responsibility Models for Security and Resiliency
+    uses: >-
+      jitsecurity-controls/jit-plans/items/architecture_review/item-arch-shared-responsibility.yml@latest
+    input:
+      note: asd
+      status: passed
   - name: Scan your Dockerfiles for vulnerabilities
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-container-scan.yml@latest
@@ -25,6 +37,14 @@ items:
   - name: Confirm your hosting model
     uses: >-
       jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
+  - name: >-
+      Create an incident response (IR) runbook for root account credential
+      misuse
+    uses: >-
+      jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-ir.yml@latest
+    input:
+      note: as
+      status: passed
   - name: Scan code for hard-coded secrets
     uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
   - name: Enable AWS Business Support (or greater) on all production AWS accounts
@@ -33,31 +53,6 @@ items:
     input:
       note: FooBar
       status: passed
-  - name: |
-      Conduct periodic architecture reviews (minimum once every year)
-    uses: >-
-      jitsecurity-controls/jit-plans/items/architecture_review/item-arch-review.yml@latest
-    input:
-      status: passed
-      note: foobar
-  - name: Scan your code for vulnerabilities (SAST)
-    uses: >-
-      jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
-  - name: |
-      Review the AWS Shared Responsibility Models for Security and Resiliency
-    uses: >-
-      jitsecurity-controls/jit-plans/items/architecture_review/item-arch-shared-responsibility.yml@latest
-    input:
-      status: passed
-      note: asd
-  - name: >
-      Create an incident response (IR) runbook for root account credential
-      misuse
-    uses: >-
-      jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-ir.yml@latest
-    input:
-      status: passed
-      note: as
 override:
   workflows:
     runtime-misconfiguration-detection:
