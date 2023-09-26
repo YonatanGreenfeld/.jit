@@ -60,7 +60,7 @@ items:
       jitsecurity-controls/jit-plans/items/operational_security/item-secops-vulnerabiliy-mgt.yml@latest
     input:
       status: passed
-      note: '43214321'
+      note: '123'
   - name: Enable AWS Business Support (or greater) on all production AWS accounts
     uses: >-
       jitsecurity-controls/jit-plans/items/support_level/item-support-business.yml@latest
