@@ -50,6 +50,14 @@ items:
     input:
       status: passed
       note: asd
+  - name: >
+      Create an incident response (IR) runbook for root account credential
+      misuse
+    uses: >-
+      jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-ir.yml@latest
+    input:
+      status: passed
+      note: asdasddsa
 override:
   workflows:
     runtime-misconfiguration-detection:
