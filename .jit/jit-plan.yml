@@ -60,6 +60,10 @@ items:
     input:
       note: FooBar
       status: passed
+  - name: |
+      Perform vulnerability management
+    uses: >-
+      jitsecurity-controls/jit-plans/items/operational_security/item-secops-vulnerabiliy-mgt.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
