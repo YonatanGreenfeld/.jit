@@ -58,6 +58,10 @@ items:
       Set account contact information
     uses: >-
       jitsecurity-controls/jit-plans/items/communication_with_aws/item-account-contacts-config.yml@latest
+  - name: |
+      Ensure all credentials used by your applications are not hard-coded
+    uses: >-
+      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-aws-ftr-secret-detection.yml@latest
 override:
   workflows:
     runtime-misconfiguration-detection:
