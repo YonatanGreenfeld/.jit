@@ -1,7 +1,0 @@
-applications:
-- api_domain: api.rocket.jitdev.io
-  application_name: JitDev
-  authentication_mode: non-authenticated
-  exclude_paths: []
-  target_url: https://platform.dev.jitdev.io/
-  type: web
