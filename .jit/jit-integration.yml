@@ -13,4 +13,4 @@ jira:
         components:
           - value: "aaaa"
         customfield_10014:
-          - value: ABCD-117
+          - id: ABCD-117
