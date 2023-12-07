@@ -12,3 +12,5 @@ jira:
           - value: "1"
         components:
           - value: "aaaa"
+        epic:
+          - id: ABCD-117
