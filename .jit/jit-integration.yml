@@ -12,5 +12,5 @@ jira:
           - value: "1"
         components:
           - value: "aaaa"
-        epic:
-          - id: ABCD-117
+        customfield_10014:
+          - value: ABCD-117
