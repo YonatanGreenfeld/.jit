@@ -30,4 +30,6 @@ items:
     input:
       status: failed
       note: No no no no
+  - name: Scan your code dependencies for vulnerabilities (SCA)
+    uses: jitsecurity-controls/jit-plans/items/code/item-dependency-check.yml@latest
 
