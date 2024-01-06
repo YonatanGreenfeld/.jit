@@ -1,5 +1,5 @@
 jira:
-  jira-1:
+  jira-prod:
     auth:
       api_token: ${{ secrets.jira-api }}
       email: eliya@jit.io
