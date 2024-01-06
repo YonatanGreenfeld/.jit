@@ -10,5 +10,3 @@ jira:
       fields:
         customfield_10034:
           - value: "1"
-        description:
-          - value: "foobar2"
