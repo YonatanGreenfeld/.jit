@@ -1,7 +1,0 @@
-applications:
-- api_domain: jit.app.com
-  application_name: MyApp
-  authentication_mode: non-authenticated
-  exclude_paths: []
-  target_url: https://platform.rocket.jitdev.io/plans/plan-mvs-for-cloud-app
-  type: web
