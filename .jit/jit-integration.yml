@@ -11,4 +11,4 @@ jira:
         customfield_10034:
           - value: "1"
         priority:
-          - name: "higest"
+          - name: "Highest"
