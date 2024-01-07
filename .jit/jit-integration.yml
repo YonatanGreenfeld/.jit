@@ -10,3 +10,4 @@ jira:
       fields:
         customfield_10033:
           - value: "1"
+    what_is-this: false
