@@ -17,6 +17,13 @@ items:
     input:
       note: FOOBAR
       status: passed
+      requirements:
+        1:
+          note: FOOBAR
+          status: passed
+        2:
+          note: FOOBAR
+          status: failed
   - name: Scan your code for vulnerabilities (SAST)
     uses: >-
       jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
