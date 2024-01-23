@@ -23,7 +23,7 @@ items:
       note: General note!
       requirements:
         '1':
-          status: failed
+          status: passed
           note: Req-1 input
         '2':
           status: not_applicable
