@@ -20,10 +20,10 @@ items:
       jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
     input:
       status: passed
-      note: General note!
+      note: Irrelevant thx.
       requirements:
         '1':
-          status: passed
+          status: not_applicable
           note: Req-1 input
         '2':
           status: not_applicable
