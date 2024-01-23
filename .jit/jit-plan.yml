@@ -8,25 +8,26 @@ references:
   - https://www.jit.io
 tags: []
 items:
-  - name: Scan your infrastructure-as-code (IaC) for misconfigurations
-    uses: >-
-      jitsecurity-controls/jit-plans/items/infrastructure/item-iac-misconfiguration-detection.yml@latest
-  - name: Confirm your hosting model
-    uses: >-
-      jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
-    input:
-      note: FOOBAR
-      status: passed
-      requirements:
-        1:
-          note: FOOBAR
-          status: passed
-        2:
-          note: FOOBAR
-          status: not_applicable
   - name: Scan your code for vulnerabilities (SAST)
     uses: >-
       jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
+  - name: Scan your infrastructure-as-code (IaC) for misconfigurations
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-iac-misconfiguration-detection.yml@latest
+  - name: |
+      Confirm your hosting model
+    uses: >-
+      jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
+    input:
+      status: passed
+      note: General note!
+      requirements:
+        '1':
+          status: failed
+          note: Req-1 input
+        '2':
+          status: not_applicable
+          note: FOOBAR
   - name: Scan code for hard-coded secrets
     uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
 
