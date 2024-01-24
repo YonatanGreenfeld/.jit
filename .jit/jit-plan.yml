@@ -14,28 +14,36 @@ items:
   - name: Scan your infrastructure-as-code (IaC) for misconfigurations
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-iac-misconfiguration-detection.yml@latest
-  - name: |
-      Confirm your hosting model
+  - name: Identify sensitive data
+    uses: >-
+      jitsecurity-controls/jit-plans/items/sensitive_data/item-item-sensitive-data-pii.yml@latest
+    input:
+      note: FooBarz
+      requirements: {}
+      status: failed
+  - name: Confirm your hosting model
     uses: >-
       jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
+    input:
+      note: ''
+      requirements:
+        '1':
+          note: ''
+          status: not_applicable
+        '2':
+          note: FOOBAR
+          status: not_applicable
+      status: passed
+  - name: Scan code for hard-coded secrets
+    uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
+  - name: |
+      Grant least privilege access
+    uses: >-
+      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-least-privilege.yml@latest
     input:
       status: passed
       note: ''
       requirements:
         '1':
-          status: not_applicable
-          note: ''
-        '2':
-          status: not_applicable
-          note: FOOBAR
-  - name: Scan code for hard-coded secrets
-    uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
-  - name: |
-      Identify sensitive data
-    uses: >-
-      jitsecurity-controls/jit-plans/items/sensitive_data/item-item-sensitive-data-pii.yml@latest
-    input:
-      status: failed
-      note: FooBarz
-      requirements: {}
+          note: Okey boss
 
