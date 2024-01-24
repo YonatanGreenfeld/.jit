@@ -58,4 +58,15 @@ items:
         '1':
           note: Foo~Barz
           status: not_applicable
+  - name: |
+      Define a Recovery Point Objective (RPO)
+    uses: >-
+      jitsecurity-controls/jit-plans/items/resiliency/item-resiliency-rpo.yml@latest
+    input:
+      status: passed
+      note: ''
+      requirements:
+        '1':
+          note: asdasdsad
+          status: passed
 
