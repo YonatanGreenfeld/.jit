@@ -42,8 +42,9 @@ items:
       jitsecurity-controls/jit-plans/items/resiliency/item-resiliency-testing.yml@latest
     input:
       status: passed
-      note: ''
+      note: asd
       requirements:
         '1':
-          note: Ok bruh
+          status: passed
+          note: aasdasdsad
 
