@@ -69,4 +69,14 @@ items:
         '1':
           status: failed
           note: asdasdsad
+  - name: |
+      Ensure all external IDs are unique
+    uses: >-
+      jitsecurity-controls/jit-plans/items/cross_account_access/item-cross-account-external-id-unique.yml@latest
+    input:
+      note: ''
+      requirements:
+        '1':
+          note: Wassaup
+          status: failed
 
