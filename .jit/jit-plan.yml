@@ -14,13 +14,13 @@ items:
   - name: Scan your infrastructure-as-code (IaC) for misconfigurations
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-iac-misconfiguration-detection.yml@latest
-  - name: Identify sensitive data
+  - name: |
+      Identify sensitive data
     uses: >-
       jitsecurity-controls/jit-plans/items/sensitive_data/item-item-sensitive-data-pii.yml@latest
     input:
-      note: FooBarz
-      requirements: {}
-      status: failed
+      status: not_applicable
+      note: Not thx
   - name: Confirm your hosting model
     uses: >-
       jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
@@ -34,49 +34,47 @@ items:
           note: FOOBAR
           status: not_applicable
       status: passed
-  - name: Scan code for hard-coded secrets
-    uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
-  - name: |
-      Resiliency Testing
+  - name: Define a Recovery Point Objective (RPO)
     uses: >-
-      jitsecurity-controls/jit-plans/items/resiliency/item-resiliency-testing.yml@latest
+      jitsecurity-controls/jit-plans/items/resiliency/item-resiliency-rpo.yml@latest
     input:
-      status: passed
-      note: asd
+      note: ''
       requirements:
         '1':
-          status: passed
-          note: aasdasdsad
-  - name: |
-      Establish a Recovery Time Objective (RTO)
+          note: asdasdsad
+          status: failed
+      status: passed
+  - name: Establish a Recovery Time Objective (RTO)
     uses: >-
       jitsecurity-controls/jit-plans/items/resiliency/item-resiliency-rto.yml@latest
     input:
-      status: passed
       note: ''
       requirements:
         '1':
           note: Foo~Barz
           status: not_applicable
-  - name: |
-      Define a Recovery Point Objective (RPO)
-    uses: >-
-      jitsecurity-controls/jit-plans/items/resiliency/item-resiliency-rpo.yml@latest
-    input:
       status: passed
-      note: ''
+  - name: Resiliency Testing
+    uses: >-
+      jitsecurity-controls/jit-plans/items/resiliency/item-resiliency-testing.yml@latest
+    input:
+      note: asd
       requirements:
         '1':
-          status: failed
-          note: asdasdsad
+          note: aasdasdsad
+          status: passed
+      status: passed
+  - name: Scan code for hard-coded secrets
+    uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
   - name: |
       Ensure all external IDs are unique
     uses: >-
       jitsecurity-controls/jit-plans/items/cross_account_access/item-cross-account-external-id-unique.yml@latest
     input:
+      status: null
       note: ''
       requirements:
         '1':
-          note: Wassaup
           status: failed
+          note: Wassaup
 
