@@ -31,6 +31,16 @@ items:
       note: Not thx
       requirements: null
       status: not_applicable
+  - name: Implement the least permissive rules for all Amazon EC2 security groups
+    uses: >-
+      jitsecurity-controls/jit-plans/items/network_security/item-netsec-sg.yml@latest
+    input:
+      note: ''
+      requirements:
+        '1':
+          note: asd
+          status: failed
+      status: null
   - name: Confirm your hosting model
     uses: >-
       jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
@@ -77,14 +87,13 @@ items:
   - name: Scan code for hard-coded secrets
     uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
   - name: |
-      Implement the least permissive rules for all Amazon EC2 security groups
+      Grant least privilege access
     uses: >-
-      jitsecurity-controls/jit-plans/items/network_security/item-netsec-sg.yml@latest
+      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-least-privilege.yml@latest
     input:
       note: ''
       requirements:
         '1':
-          note: asd
-          status: failed
-
+          status: passed
+          note: Is it now?
 
