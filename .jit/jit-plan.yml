@@ -11,16 +11,26 @@ items:
   - name: Scan your code for vulnerabilities (SAST)
     uses: >-
       jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
+  - name: Ensure all external IDs are unique
+    uses: >-
+      jitsecurity-controls/jit-plans/items/cross_account_access/item-cross-account-external-id-unique.yml@latest
+    input:
+      note: ''
+      requirements:
+        '1':
+          note: Wassaup
+          status: failed
+      status: null
   - name: Scan your infrastructure-as-code (IaC) for misconfigurations
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-iac-misconfiguration-detection.yml@latest
-  - name: |
-      Identify sensitive data
+  - name: Identify sensitive data
     uses: >-
       jitsecurity-controls/jit-plans/items/sensitive_data/item-item-sensitive-data-pii.yml@latest
     input:
-      status: not_applicable
       note: Not thx
+      requirements: null
+      status: not_applicable
   - name: Confirm your hosting model
     uses: >-
       jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
@@ -67,14 +77,19 @@ items:
   - name: Scan code for hard-coded secrets
     uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
   - name: |
-      Ensure all external IDs are unique
+      Implement the least permissive rules for all Amazon EC2 security groups
     uses: >-
-      jitsecurity-controls/jit-plans/items/cross_account_access/item-cross-account-external-id-unique.yml@latest
+      jitsecurity-controls/jit-plans/items/network_security/item-netsec-sg.yml@latest
     input:
-      status: null
       note: ''
       requirements:
         '1':
-          status: failed
-          note: Wassaup
+          note: asd
+          status: passed
+        '2':
+          note: asd
+          status: passed
+        '3':
+          status: passed
+          note: asd
 
