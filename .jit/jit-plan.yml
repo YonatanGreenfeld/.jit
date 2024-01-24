@@ -14,19 +14,20 @@ items:
   - name: Scan your infrastructure-as-code (IaC) for misconfigurations
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-iac-misconfiguration-detection.yml@latest
-  - name: Confirm your hosting model
+  - name: |
+      Confirm your hosting model
     uses: >-
       jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
     input:
-      note: Irrelevant thx.
+      status: passed
+      note: ''
       requirements:
         '1':
-          note: Req-1 input
           status: not_applicable
+          note: ''
         '2':
-          note: FOOBAR
           status: not_applicable
-      status: passed
+          note: FOOBAR
   - name: Scan code for hard-coded secrets
     uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
   - name: |
