@@ -85,11 +85,6 @@ items:
       requirements:
         '1':
           note: asd
-          status: passed
-        '2':
-          note: asd
-          status: passed
-        '3':
-          status: passed
-          note: asd
+          status: failed
+
 
