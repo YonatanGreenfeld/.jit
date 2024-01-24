@@ -67,6 +67,6 @@ items:
       note: ''
       requirements:
         '1':
+          status: failed
           note: asdasdsad
-          status: passed
 
