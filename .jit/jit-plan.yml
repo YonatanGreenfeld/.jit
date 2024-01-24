@@ -91,7 +91,7 @@ items:
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-least-privilege.yml@latest
     input:
-      note: ''
+      note: Foo - this is the main note!
       requirements:
         '1':
           status: passed
