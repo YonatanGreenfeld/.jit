@@ -3,15 +3,21 @@ aws:
   regions:
   - us-east-1
   type: account
-jira:
-  shimi:
+# jira:
+#   shimi:
+#     auth:
+#       api_token: ${{ jit_secrets.jira-api   }}
+#       domain: eliya-test-99
+#       email: eliya@jit.io
+#     preferences:
+#       fields:
+#         customfield_10034:
+#         - value: '1'
+#       issue_type_id: 10001
+#       project_id: 10001
+shortcut:
+  shortcut_jit:
     auth:
-      api_token: ${{ jit_secrets.jira-api   }}
-      domain: eliya-test-99
-      email: eliya@jit.io
+      api_token: ${{ jit_secrets.shortcut-api }}
     preferences:
-      fields:
-        customfield_10034:
-        - value: '1'
-      issue_type_id: 10001
-      project_id: 10001
+      project_id: 2
