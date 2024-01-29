@@ -8,62 +8,6 @@ references:
   - https://www.jit.io
 tags: []
 items:
-  - name: Scan your code for vulnerabilities (SAST)
-    uses: >-
-      jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
-  - name: Ensure all external IDs are unique
-    uses: >-
-      jitsecurity-controls/jit-plans/items/cross_account_access/item-cross-account-external-id-unique.yml@latest
-    input:
-      note: ''
-      requirements:
-        '1':
-          note: Wassaup
-          status: failed
-      status: null
-  - name: Scan your infrastructure-as-code (IaC) for misconfigurations
-    uses: >-
-      jitsecurity-controls/jit-plans/items/infrastructure/item-iac-misconfiguration-detection.yml@latest
-  - name: Identify sensitive data
-    uses: >-
-      jitsecurity-controls/jit-plans/items/sensitive_data/item-item-sensitive-data-pii.yml@latest
-    input:
-      note: Not thx
-      requirements: null
-      status: not_applicable
-  - name: Implement the least permissive rules for all Amazon EC2 security groups
-    uses: >-
-      jitsecurity-controls/jit-plans/items/network_security/item-netsec-sg.yml@latest
-    input:
-      note: ''
-      requirements:
-        '1':
-          note: asd
-          status: failed
-      status: null
-  - name: Confirm your hosting model
-    uses: >-
-      jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
-    input:
-      note: ''
-      requirements:
-        '1':
-          note: ''
-          status: not_applicable
-        '2':
-          note: FOOBAR
-          status: not_applicable
-      status: passed
-  - name: Define a Recovery Point Objective (RPO)
-    uses: >-
-      jitsecurity-controls/jit-plans/items/resiliency/item-resiliency-rpo.yml@latest
-    input:
-      note: ''
-      requirements:
-        '1':
-          note: asdasdsad
-          status: failed
-      status: passed
   - name: Establish a Recovery Time Objective (RTO)
     uses: >-
       jitsecurity-controls/jit-plans/items/resiliency/item-resiliency-rto.yml@latest
@@ -72,28 +16,143 @@ items:
       requirements:
         '1':
           note: Foo~Barz
-          status: not_applicable
-      status: passed
-  - name: Resiliency Testing
+          status: passed
+      status: null
+  - name: |
+      Confirm your hosting model
     uses: >-
-      jitsecurity-controls/jit-plans/items/resiliency/item-resiliency-testing.yml@latest
+      jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
     input:
-      note: asd
+      note: This is irrelevant
       requirements:
         '1':
-          note: aasdasdsad
+          status: failed
+          note: I do not need this. So I don't do it.
+  - name: |
+      Enable AWS Business Support (or greater) on all production AWS accounts
+    uses: >-
+      jitsecurity-controls/jit-plans/items/support_level/item-support-business.yml@latest
+    input:
+      note: ''
+      requirements:
+        '1':
           status: passed
-      status: passed
-  - name: Scan code for hard-coded secrets
-    uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
+          note: I love support
+  - name: |
+      Conduct periodic architecture reviews (minimum once every year)
+    uses: >-
+      jitsecurity-controls/jit-plans/items/architecture_review/item-arch-review.yml@latest
+    input:
+      note: Hope this is ok
+      requirements:
+        '1':
+          status: passed
+          note: 'Yes'
+        '2':
+          status: failed
+          note: Done in 2022
+  - name: |
+      Review the AWS Shared Responsibility Models for Security and Resiliency
+    uses: >-
+      jitsecurity-controls/jit-plans/items/architecture_review/item-arch-shared-responsibility.yml@latest
+    input:
+      note: ''
+      requirements:
+        '1':
+          status: passed
+          note: All the time
+  - name: >
+      Create an incident response (IR) runbook for root account credential
+      misuse
+    uses: >-
+      jitsecurity-controls/jit-plans/items/aws_root_account/item-root-account-ir.yml@latest
+    input:
+      note: ''
+      requirements:
+        '1':
+          status: passed
+          note: Yes in the safe at my home
+  - name: |
+      Configure AWS account contacts
+    uses: >-
+      jitsecurity-controls/jit-plans/items/communication_with_aws/item-account-communication.yml@latest
+    input:
+      note: ''
+      requirements:
+        '1':
+          status: passed
+          note: It's me +972528447654
+  - name: |
+      Set account contact information
+    uses: >-
+      jitsecurity-controls/jit-plans/items/communication_with_aws/item-account-contacts-config.yml@latest
+    input:
+      note: ''
+      requirements:
+        '1':
+          status: failed
+          note: We use gmail
+  - name: |
+      Create individual identities (no shared credentials)
+    uses: >-
+      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-no-shared-creds.yml@latest
+    input:
+      note: ''
+      requirements:
+        '1':
+          status: not_applicable
+          note: We do not have credentials
+  - name: >
+      Use IAM roles and its temporary security credentials to provide access to
+      third parties
+    uses: >-
+      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-third-party.yml@latest
+    input:
+      note: ''
+      requirements:
+        '1':
+          status: not_applicable
+          note: We do not have third parties
+        '2':
+          status: not_applicable
+          note: No third parties
   - name: |
       Grant least privilege access
     uses: >-
       jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-least-privilege.yml@latest
     input:
-      note: Foo - this is the main note!
+      note: ''
       requirements:
         '1':
           status: passed
-          note: Is it now?
-
+          note: of course
+  - name: |
+      Manage access based on life cycle
+    uses: >-
+      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-manage-access-lifecycle.yml@latest
+    input:
+      note: ''
+      requirements:
+        '1':
+          status: failed
+          note: We do not have off-boarding process
+  - name: |
+      Store secrets securely
+    uses: >-
+      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-store-secrets.yml@latest
+    input:
+      note: ''
+      requirements:
+        '1':
+          status: not_applicable
+          note: No secrets
+  - name: |
+      Audit identities quarterly
+    uses: >-
+      jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-audit.yml@latest
+    input:
+      note: ''
+      requirements:
+        '1':
+          status: failed
+          note: Haven't done it yet
