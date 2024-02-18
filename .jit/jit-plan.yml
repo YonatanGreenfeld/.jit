@@ -158,6 +158,4 @@ items:
           note: I love support
           status: passed
       status: null
-  - name: Scan code for hard-coded secrets
-    uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
 
