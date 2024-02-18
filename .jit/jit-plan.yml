@@ -158,7 +158,4 @@ items:
           note: I love support
           status: passed
       status: null
-  - name: Scan your code for vulnerabilities (SAST)
-    uses: >-
-      jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
 
