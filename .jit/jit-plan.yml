@@ -186,4 +186,7 @@ items:
   - name: Verify that the users of your AWS accounts have enabled MFA
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-mfa-cloud-providers.yml@latest
+  - name: Import AWS Security Hub Findings
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-cloud-security-posture-management.yml@latest
 
