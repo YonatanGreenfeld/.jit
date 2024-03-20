@@ -54,14 +54,15 @@ items:
   - name: Verify that Github Branch Protection is properly configured
     uses: >-
       jitsecurity-controls/jit-plans/items/third_party_app/item-branch-protection-scm.yml@latest
+  - name: Import AWS Security Hub Findings
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-cloud-security-posture-management.yml@latest
   - name: Scan your code for vulnerabilities (SAST)
     uses: >-
       jitsecurity-controls/jit-plans/items/code/item-code-vulnerability.yml@latest
   - name: Scan your Dockerfiles for vulnerabilities
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-container-scan.yml@latest
-  - name: Scan your code dependencies for vulnerabilities (SCA)
-    uses: jitsecurity-controls/jit-plans/items/code/item-dependency-check.yml@latest
   - name: Scan Kubernetes configuration files
     uses: >-
       jitsecurity-controls/jit-plans/items/infrastructure/item-iac-kubernetes.yml@latest
@@ -133,6 +134,9 @@ items:
           note: No third parties
           status: not_applicable
       status: null
+  - name: Verify that the users of your AWS accounts have enabled MFA
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-mfa-cloud-providers.yml@latest
   - name: Confirm your hosting model
     uses: >-
       jitsecurity-controls/jit-plans/items/partner_hosted/item-partner-hosting-model.yml@latest
@@ -165,8 +169,14 @@ items:
           note: Yes in the safe at my home
           status: passed
       status: null
+  - name: Scan infrastructure for runtime misconfigurations
+    uses: >-
+      jitsecurity-controls/jit-plans/items/infrastructure/item-runtime-misconfiguration-detection.yml@latest
   - name: Scan code for hard-coded secrets
     uses: jitsecurity-controls/jit-plans/items/code/item-secret-detection.yml@latest
+  - name: Generate a Software Bill of Materials (SBOM)
+    uses: >-
+      jitsecurity-controls/jit-plans/items/code/item-software-bill-of-materials.yml@latest
   - name: Enable AWS Business Support (or greater) on all production AWS accounts
     uses: >-
       jitsecurity-controls/jit-plans/items/support_level/item-support-business.yml@latest
@@ -177,16 +187,4 @@ items:
           note: I love support
           status: passed
       status: null
-  - name: Generate a Software Bill of Materials (SBOM)
-    uses: >-
-      jitsecurity-controls/jit-plans/items/code/item-software-bill-of-materials.yml@latest
-  - name: Scan infrastructure for runtime misconfigurations
-    uses: >-
-      jitsecurity-controls/jit-plans/items/infrastructure/item-runtime-misconfiguration-detection.yml@latest
-  - name: Verify that the users of your AWS accounts have enabled MFA
-    uses: >-
-      jitsecurity-controls/jit-plans/items/infrastructure/item-mfa-cloud-providers.yml@latest
-  - name: Import AWS Security Hub Findings
-    uses: >-
-      jitsecurity-controls/jit-plans/items/infrastructure/item-cloud-security-posture-management.yml@latest
 
