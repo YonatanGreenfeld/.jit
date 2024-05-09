@@ -155,6 +155,8 @@ items:
     status: null
   name: Enable AWS Business Support (or greater) on all production AWS accounts
   uses: jitsecurity-controls/jit-plans/items/support_level/item-support-business.yml@latest
+- name: Analyze for Jit Context
+  uses: jitsecurity-controls/jit-plans/items/jit-context/item-jit-context-analysis.yml@latest
 level: beginner
 name: My plan
 owners:
