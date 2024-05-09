@@ -111,8 +111,6 @@ items:
   name: Use IAM roles and its temporary security credentials to provide access to
     third parties
   uses: jitsecurity-controls/jit-plans/items/identity_and_access_management/item-iam-third-party.yml@latest
-- name: Analyze for Jit Context
-  uses: jitsecurity-controls/jit-plans/items/jit-context/item-jit-context-analysis@latest.yml@latest
 - name: Verify that the users of your AWS accounts have enabled MFA
   uses: jitsecurity-controls/jit-plans/items/infrastructure/item-mfa-cloud-providers.yml@latest
 - input:
@@ -157,8 +155,6 @@ items:
     status: null
   name: Enable AWS Business Support (or greater) on all production AWS accounts
   uses: jitsecurity-controls/jit-plans/items/support_level/item-support-business.yml@latest
-- name: Analyze for Jit Context
-  uses: jitsecurity-controls/jit-plans/items/jit-context/item-jit-context-analysis.yml@latest
 level: beginner
 name: My plan
 owners:
