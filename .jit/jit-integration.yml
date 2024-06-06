@@ -1,8 +1,3 @@
-aws:
-- account_id: '859000334327'
-  regions:
-  - us-east-1
-  type: account
 jira:
   shimi:
     auth:
@@ -15,9 +10,3 @@ jira:
         - value: '1'
       issue_type_id: 10001
       project_id: 10001
-# shortcut:
-#   shortcut_jit:
-#     auth:
-#       api_token: ${{ jit_secrets.shortcut-api }}
-#     preferences:
-#       project_id: 2
