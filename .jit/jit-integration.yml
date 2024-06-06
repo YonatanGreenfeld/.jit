@@ -1,3 +1,8 @@
+aws:
+- account_id: '566740389182'
+  regions:
+  - us-east-1
+  type: account
 jira:
   shimi:
     auth:
